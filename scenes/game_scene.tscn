@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn8qadqldaxp5"]
+
+[ext_resource type="Script" path="res://scripts/game_scene.gd" id="1_ktwq3"]
+[ext_resource type="PackedScene" uid="uid://dsrpshn58fl4y" path="res://scenes/present.tscn" id="2_6fqjj"]
+[ext_resource type="PackedScene" uid="uid://bw3bayq8rhcm0" path="res://scenes/future.tscn" id="3_4gnso"]
+[ext_resource type="PackedScene" uid="uid://8he0w7wp3etb" path="res://scenes/player.tscn" id="4_1hul1"]
+
+[node name="game_scene" type="Node2D"]
+script = ExtResource("1_ktwq3")
+
+[node name="Present" parent="." instance=ExtResource("2_6fqjj")]
+
+[node name="Future" parent="." instance=ExtResource("3_4gnso")]
+visible = false
+
+[node name="Player" parent="." instance=ExtResource("4_1hul1")]
+position = Vector2(59, 529)
