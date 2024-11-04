@@ -1,9 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://iptjvvc72mwm"]
+[gd_scene load_steps=9 format=3 uid="uid://iptjvvc72mwm"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_vqs3j"]
+[ext_resource type="PackedScene" uid="uid://bde3vdd56tkcq" path="res://scenes/fade_transition.tscn" id="2_mla76"]
+[ext_resource type="Texture2D" uid="uid://cx42xcgg3pkt7" path="res://assets/resources/UI/Game Cover Page.png" id="2_o15tw"]
+[ext_resource type="Texture2D" uid="uid://qefqxhcwjm63" path="res://assets/resources/UI/start_regular.png" id="3_pmhep"]
+[ext_resource type="Texture2D" uid="uid://h4ph81vycfnl" path="res://assets/resources/UI/start_hover.png" id="4_08jbt"]
+[ext_resource type="Texture2D" uid="uid://dqg03nnu1te0n" path="res://assets/resources/UI/instructions_regular.png" id="5_8l6p1"]
+[ext_resource type="Texture2D" uid="uid://dxsybm4sudr42" path="res://assets/resources/UI/instructions_hover.png" id="6_1oe52"]
+[ext_resource type="PackedScene" uid="uid://g665dcekf2ol" path="res://scenes/instructions.tscn" id="8_6ilcv"]
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_vqs3j")
+
+[node name="Instructions" parent="." instance=ExtResource("8_6ilcv")]
+
+[node name="Cover Page" type="Sprite2D" parent="."]
+position = Vector2(575, 318.656)
+scale = Vector2(0.192667, 0.195759)
+texture = ExtResource("2_o15tw")
 
 [node name="Button Manager" type="Control" parent="."]
 layout_mode = 3
@@ -11,26 +25,42 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Start" type="Button" parent="Button Manager"]
+[node name="Start" type="TextureButton" parent="Button Manager"]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Start"
+offset_left = 90.0
+offset_top = 555.0
+offset_right = 259.0
+offset_bottom = 583.0
+texture_normal = ExtResource("3_pmhep")
+texture_hover = ExtResource("4_08jbt")
+ignore_texture_size = true
+stretch_mode = 4
 
-[node name="Instructions" type="Button" parent="Button Manager"]
-offset_left = 196.0
-offset_top = 14.0
-offset_right = 297.0
-offset_bottom = 45.0
-text = "Instructions"
+[node name="Instructions" type="TextureButton" parent="Button Manager"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 594.0
+offset_right = 487.0
+offset_bottom = 629.0
+texture_normal = ExtResource("5_8l6p1")
+texture_pressed = ExtResource("5_8l6p1")
+texture_hover = ExtResource("6_1oe52")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="Quit" type="Button" parent="Button Manager"]
-offset_left = 190.0
-offset_top = 67.0
-offset_right = 427.0
-offset_bottom = 161.0
+layout_mode = 0
+offset_left = 801.0
+offset_top = 335.0
+offset_right = 1038.0
+offset_bottom = 429.0
 text = "Quit"
+
+[node name="Fade_transition" parent="." instance=ExtResource("2_mla76")]
+
+[node name="fade_timer" type="Timer" parent="Fade_transition"]
 
 [connection signal="pressed" from="Button Manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button Manager/Instructions" to="." method="_on_instructions_pressed"]
 [connection signal="pressed" from="Button Manager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="Fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
