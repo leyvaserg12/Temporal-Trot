@@ -21,19 +21,15 @@ func _on_start_pressed() -> void:
 
 func _on_instructions_pressed() -> void:
 	button_type = "instructions"
-	$Fade_transition.show()
-	$Fade_transition/fade_timer.start()
-	$Fade_transition/AnimationPlayer.play("fade_in")
+	$main_menu/Instructions.visible = true
+	button_type = null
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 
 func _on_fade_timer_timeout() -> void:
-	# checks button type and plays scene after fade transition
 	
 	if button_type == "start":
 		get_tree().change_scene_to_file("res://scenes/game_scene.tscn")
 		
-	elif button_type == "instructions":
-		get_tree().change_scene_to_file("res://scenes/instructions.tscn")
