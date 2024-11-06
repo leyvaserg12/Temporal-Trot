@@ -6,8 +6,14 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	
+	#Connecting collision signal from all existing obstacles
+	#will need to change as procedural generated obstacles are implemented
+	for obstacle in present.get_node("Obstacle_Manager").get_children():
+		obstacle.connect("player_collided", _player_dies) 	
+		
+	for obstacle in future.get_node("Obstacle_Manager").get_children():
+		obstacle.connect("player_collided", _player_dies) 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -32,3 +38,6 @@ func teleport():
 		present.is_here = true
 		future.is_here = false
 		
+
+func _player_dies():
+	print("Player Died")

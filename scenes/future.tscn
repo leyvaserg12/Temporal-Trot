@@ -92,8 +92,7 @@ texture = ExtResource("1_04dbh")
 8:8/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_r242a"]
-physics_layer_0/collision_layer = 0
-physics_layer_0/collision_mask = 0
+physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_anhnv")
 
 [node name="Future" type="Node2D"]
