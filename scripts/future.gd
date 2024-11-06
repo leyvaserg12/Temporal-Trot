@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 		#future terrain and obstacles in collision layer 1
 		terrain.tile_set.set_physics_layer_collision_layer(0, 1)
 		for obstacle in obstacle_manager.get_children():
-			obstacle.collision_layer = 1
+			obstacle.collision_mask = 2
 
 	else:
 		#future is invisible
@@ -31,6 +31,6 @@ func _physics_process(delta: float) -> void:
 		#future terrain and obstacles in collision layer 0
 		terrain.tile_set.set_physics_layer_collision_layer(0, 0)
 		for obstacle in obstacle_manager.get_children():
-			obstacle.collision_layer = 0
+			obstacle.collision_mask = 0
 		
 	
