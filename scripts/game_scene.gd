@@ -44,4 +44,5 @@ func teleport():
 		
 
 func _player_dies():
+	get_tree().quit()
 	print("Player Died")

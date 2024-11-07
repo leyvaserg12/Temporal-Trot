@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dsrpshn58fl4y" path="res://scenes/present.tscn" id="2_6fqjj"]
 [ext_resource type="PackedScene" uid="uid://bw3bayq8rhcm0" path="res://scenes/future.tscn" id="3_4gnso"]
 [ext_resource type="PackedScene" uid="uid://8he0w7wp3etb" path="res://scenes/player.tscn" id="4_1hul1"]
-[ext_resource type="PackedScene" uid="uid://bde3vdd56tkcq" path="res://scenes/Fade_transition.tscn" id="5_a68w4"]
+[ext_resource type="PackedScene" uid="uid://bde3vdd56tkcq" path="res://scenes/fade_transition.tscn" id="5_a68w4"]
 
 [node name="game_scene" type="Node2D"]
 script = ExtResource("1_ktwq3")
