@@ -1,9 +1,23 @@
 extends CharacterBody2D
-
+@onready var anim = $AnimatedSprite2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+#animation for movement
+func _process(delta):
+	var is_moving = false
+	
+	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
+		anim.play("playerRun")
+		is_moving = true
+	
+	if Input.is_action_pressed("ui_accept"):
+		anim.play("playerJump")
+		is_moving = true
+		
+	if not is_moving and not Input.is_action_pressed("ui_accept"):
+		anim.play("playerIdle")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -22,5 +36,4 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
-	# test commit
 	move_and_slide()

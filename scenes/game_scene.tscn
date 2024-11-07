@@ -16,5 +16,6 @@ visible = false
 
 [node name="Player" parent="." instance=ExtResource("4_1hul1")]
 position = Vector2(59, 529)
+scale = Vector2(6, 6)
 
 [node name="Fade_transition" parent="." instance=ExtResource("5_a68w4")]
