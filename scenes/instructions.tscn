@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://g665dcekf2ol"]
+
+[ext_resource type="Script" path="res://scenes/instructions.gd" id="1_l08bq"]
+[ext_resource type="Texture2D" uid="uid://c6e7fu4e45qri" path="res://assets/resources/UI/exit_page_hover.png" id="2_0x4fd"]
+[ext_resource type="Texture2D" uid="uid://cx42xcgg3pkt7" path="res://assets/resources/UI/Game Cover Page.png" id="2_1qij7"]
+[ext_resource type="Texture2D" uid="uid://b7i7r42qim0q8" path="res://assets/resources/UI/Instruction Cover Page.png" id="2_ilve7"]
+[ext_resource type="Texture2D" uid="uid://b77wherpkl7px" path="res://assets/resources/UI/exit_page.png" id="4_wuam8"]
+[ext_resource type="SpriteFrames" uid="uid://cbuwm6nxgehj0" path="res://assets/animations/player_movement.tres" id="5_r4lma"]
+
+[node name="Instructions" type="Node2D"]
+script = ExtResource("1_l08bq")
+metadata/_edit_vertical_guides_ = [-125.0]
+
+[node name="Cover Page" type="Sprite2D" parent="."]
+position = Vector2(575, 318.656)
+scale = Vector2(0.192667, 0.195759)
+texture = ExtResource("2_1qij7")
+
+[node name="Instruction" type="Sprite2D" parent="."]
+position = Vector2(588, 328)
+scale = Vector2(0.66, 0.622)
+texture = ExtResource("2_ilve7")
+
+[node name="jump" type="AnimatedSprite2D" parent="Instruction"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(13.7237, -114.272)
+scale = Vector2(6.67559, 6.39091)
+sprite_frames = ExtResource("5_r4lma")
+animation = &"playerJump"
+frame_progress = 0.234692
+
+[node name="run" type="AnimatedSprite2D" parent="Instruction"]
+texture_filter = 1
+position = Vector2(-268.592, -120.505)
+scale = Vector2(6.35211, 6.73165)
+sprite_frames = ExtResource("5_r4lma")
+animation = &"playerRun"
+frame_progress = 0.1892
+
+[node name="teleport" type="AnimatedSprite2D" parent="Instruction"]
+texture_filter = 1
+position = Vector2(331.329, -116.35)
+scale = Vector2(6.35211, 6.73165)
+sprite_frames = ExtResource("5_r4lma")
+animation = &"playerTeleport"
+frame_progress = 0.104478
+
+[node name="exit_instructions" type="TextureButton" parent="Instruction"]
+offset_left = -483.333
+offset_top = -409.968
+offset_right = -427.333
+offset_bottom = -356.968
+texture_normal = ExtResource("2_0x4fd")
+texture_pressed = ExtResource("2_0x4fd")
+texture_hover = ExtResource("4_wuam8")
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="pressed" from="Instruction/exit_instructions" to="." method="_on_texture_button_pressed"]
