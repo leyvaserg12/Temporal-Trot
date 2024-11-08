@@ -5,11 +5,10 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 #animation for movement
-func _process(delta):
+func _process(_delta):
 	var is_moving = false
 	
 	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
-		anim.play("playerRun")
 		is_moving = true
 	
 	if Input.is_action_pressed("ui_accept"):
@@ -35,5 +34,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if abs(velocity.x) > 0.1:
+		anim.play("playerRun")
 		
 	move_and_slide()

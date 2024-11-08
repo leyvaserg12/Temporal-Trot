@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bde3vdd56tkcq" path="res://scenes/fade_transition.tscn" id="5_a68w4"]
 
 [node name="game_scene" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_ktwq3")
 
 [node name="Present" parent="." instance=ExtResource("2_6fqjj")]

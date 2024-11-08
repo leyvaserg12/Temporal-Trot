@@ -53,13 +53,14 @@ ignore_texture_size = true
 stretch_mode = 4
 
 [node name="Quit" type="Button" parent="main_menu/Button Manager"]
-visible = false
 layout_mode = 0
-offset_left = 801.0
-offset_top = 335.0
-offset_right = 1038.0
-offset_bottom = 429.0
-text = "Quit"
+offset_left = 936.0
+offset_top = 31.0
+offset_right = 1007.0
+offset_bottom = 103.0
+focus_mode = 0
+text = "X"
+flat = true
 
 [node name="Instructions" parent="main_menu" instance=ExtResource("3_jdnlb")]
 visible = false
