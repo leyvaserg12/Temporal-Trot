@@ -24,8 +24,13 @@ scale = Vector2(1.8, 1.8)
 visible = false
 
 [node name="Player" parent="." instance=ExtResource("4_1hul1")]
-position = Vector2(59, 529)
+position = Vector2(59, 569)
 scale = Vector2(6, 6)
+
+[node name="AnimatedSprite2D" parent="Player" index="1"]
+position = Vector2(-0.333333, 0.333335)
+animation = &"playerTeleport"
+frame_progress = 0.493925
 
 [node name="Fade_transition" parent="." instance=ExtResource("5_a68w4")]
 

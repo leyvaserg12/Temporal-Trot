@@ -8,7 +8,6 @@ extends Node2D
 func _ready() -> void:
 
 	$Fade_transition/AnimationPlayer.play("fade_out")
-
 	
 	#Connecting collision signal from all existing obstacles
 	#will need to change as procedural generated obstacles are implemented
@@ -19,12 +18,8 @@ func _ready() -> void:
 		obstacle.connect("player_collided", _player_dies) 	
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	
-	#teleport check
-	if Input.is_action_just_pressed("teleport"):
-		print("Teleport")
+	if Input.is_action_just_pressed("mv_tele"):
 		teleport()
 
 func teleport():
