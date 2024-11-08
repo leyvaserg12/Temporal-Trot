@@ -8,7 +8,7 @@ extends CharacterBody2D
 
 @onready var window_size: Vector2 = viewport.get_visible_rect().size
 
-@onready var anim = $AnimatedSprite2D
+@onready var anim: AnimatedSprite2D = $Sprite
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0

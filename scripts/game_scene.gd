@@ -6,6 +6,8 @@ extends Node2D
 @onready var timer: Timer = $DeathTimer
 @onready var present: Node2D = $Present
 @onready var future: Node2D = $Future
+@onready var pparallax: CanvasLayer = $PresentParallax
+@onready var fparallax: CanvasLayer = $FutureParallax
 
 enum {PRESENT, FUTURE}
 enum STATE {RUNNING, GAMEOVER}
@@ -39,12 +41,17 @@ func toggle_dimension(dim: Node2D, vis: bool):
 func teleport():
 	if current_dimension == PRESENT:
 		current_dimension = FUTURE
+		
 		toggle_dimension(future, true)
+		fparallax.visible = true
 		toggle_dimension(present, false)
+		pparallax.visible = false
 	else:
 		current_dimension = PRESENT
 		toggle_dimension(present, true)
+		pparallax.visible = true
 		toggle_dimension(future, false)
+		fparallax.visible = false
 
 func player_dies():
 	# get_tree().quit()
