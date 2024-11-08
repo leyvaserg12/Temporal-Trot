@@ -2,12 +2,16 @@ class_name Player
 
 extends CharacterBody2D
 
+@onready var game: Game = get_tree().root.get_child(0)
+@onready var camera: PCamera = game.get_node("Camera")
+@onready var viewport: Viewport = get_viewport()
+
+@onready var window_size: Vector2 = viewport.get_visible_rect().size
+
 @onready var anim = $AnimatedSprite2D
-@export var camera: Camera2D
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-
-var camera_speed = 0
 
 func _process(_delta: float) -> void:
 	# flowchart for animation, air > moving > idle
@@ -32,12 +36,12 @@ func _physics_process(delta: float) -> void:
 
 	var direction := Input.get_axis("mv_left", "mv_right")
 	if direction:
-		velocity.x = direction * SPEED + camera_speed
+		velocity.x = direction * SPEED + camera.speed
 	else:
-		velocity.x = move_toward(velocity.x, camera_speed, SPEED)
-		
+		velocity.x = move_toward(velocity.x, camera.speed, SPEED)
+	
+	if (position.y > camera.get_screen_center_position().y + window_size.y/2/camera.zoom.y or
+		position.x < camera.get_screen_center_position().x - window_size.x/2/camera.zoom.x):
+		game.player_collided.emit()
+	
 	move_and_slide()
-
-# this isn't a great way to update the player's speed, but it works for the moment
-func _on_camera_speed_update(cspeed) -> void:
-	camera_speed = cspeed

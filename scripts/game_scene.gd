@@ -2,6 +2,8 @@ class_name Game
 
 extends Node2D
 
+@onready var player: Player = $Player
+@onready var timer: Timer = $DeathTimer
 @onready var present: Node2D = $Present
 @onready var future: Node2D = $Future
 
@@ -20,6 +22,7 @@ func _ready() -> void:
 	toggle_dimension(present, true)
 	toggle_dimension(future, false)
 	
+	timer.timeout.connect(reload)
 	player_collided.connect(player_dies)
 	
 
@@ -46,3 +49,11 @@ func teleport():
 func player_dies():
 	# get_tree().quit()
 	print("Player Died")
+	player_died.emit()
+	player.queue_free()
+	timer.start()
+	
+	
+func reload():
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	
