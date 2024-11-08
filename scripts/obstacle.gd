@@ -2,6 +2,8 @@ extends Area2D
 
 signal player_collided
 
-func _on_body_entered(_body: Node2D) -> void:
-	print("collision")
-	player_collided.emit()
+@onready var player = get_tree().root.get_child(0).get_node("Player")
+
+func _on_body_entered(body: Node) -> void:
+	if body == player:
+		player_collided.emit()
