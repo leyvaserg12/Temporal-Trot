@@ -12,65 +12,61 @@
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_vqs3j")
 
-[node name="main_menu" type="CanvasLayer" parent="."]
+[node name="Menu" type="CanvasLayer" parent="."]
 layer = -1
 follow_viewport_enabled = true
 
-[node name="Cover Page" type="Sprite2D" parent="main_menu"]
-position = Vector2(575, 318.656)
-scale = Vector2(0.192667, 0.195759)
-texture = ExtResource("2_o15tw")
-
-[node name="Button Manager" type="Control" parent="main_menu"]
-layout_mode = 3
+[node name="Background" type="TextureRect" parent="Menu"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_o15tw")
+expand_mode = 1
 
-[node name="Start" type="TextureButton" parent="main_menu/Button Manager"]
+[node name="Start" type="TextureButton" parent="Menu/Background"]
 layout_mode = 0
-offset_left = 90.0
-offset_top = 555.0
-offset_right = 259.0
-offset_bottom = 583.0
+offset_left = 100.0
+offset_top = 625.0
+offset_right = 269.0
+offset_bottom = 653.0
 texture_normal = ExtResource("3_pmhep")
 texture_hover = ExtResource("4_08jbt")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="Instructions" type="TextureButton" parent="main_menu/Button Manager"]
+[node name="Instructions" type="TextureButton" parent="Menu/Background"]
 layout_mode = 0
-offset_left = 88.0
-offset_top = 594.0
-offset_right = 487.0
-offset_bottom = 629.0
+offset_left = 100.0
+offset_top = 670.0
+offset_right = 499.0
+offset_bottom = 705.0
 texture_normal = ExtResource("5_8l6p1")
 texture_pressed = ExtResource("5_8l6p1")
 texture_hover = ExtResource("6_1oe52")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="Quit" type="Button" parent="main_menu/Button Manager"]
+[node name="Quit" type="Button" parent="Menu/Background"]
 layout_mode = 0
-offset_left = 936.0
-offset_top = 31.0
-offset_right = 1007.0
-offset_bottom = 103.0
+offset_left = 937.0
+offset_top = 32.0
+offset_right = 1008.0
+offset_bottom = 104.0
 focus_mode = 0
 text = "X"
 flat = true
 
-[node name="Instructions" parent="main_menu" instance=ExtResource("3_jdnlb")]
+[node name="Instructions" parent="Menu" instance=ExtResource("3_jdnlb")]
 visible = false
 
-[node name="Fade_transition" parent="." instance=ExtResource("2_mla76")]
+[node name="FadeTransition" parent="." instance=ExtResource("2_mla76")]
 
-[node name="fade_timer" type="Timer" parent="Fade_transition"]
+[node name="Timer" type="Timer" parent="FadeTransition"]
 
-[connection signal="pressed" from="main_menu/Button Manager/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="main_menu/Button Manager/Instructions" to="." method="_on_instructions_pressed"]
-[connection signal="toggled" from="main_menu/Button Manager/Instructions" to="." method="_on_instructions_toggled"]
-[connection signal="pressed" from="main_menu/Button Manager/Quit" to="." method="_on_quit_pressed"]
-[connection signal="timeout" from="Fade_transition/fade_timer" to="." method="_on_fade_timer_timeout"]
+[connection signal="pressed" from="Menu/Background/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Menu/Background/Instructions" to="." method="_on_instructions_pressed"]
+[connection signal="toggled" from="Menu/Background/Instructions" to="." method="_on_instructions_toggled"]
+[connection signal="pressed" from="Menu/Background/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="FadeTransition/Timer" to="." method="_on_fade_timer_timeout"]

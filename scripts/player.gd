@@ -40,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, camera.speed, SPEED)
 	
+	# kills you if you fall off screen or fall behind camera
 	if (position.y > camera.get_screen_center_position().y + window_size.y/2/camera.zoom.y or
 		position.x < camera.get_screen_center_position().x - window_size.x/2/camera.zoom.x):
 		game.player_collided.emit()
