@@ -12,8 +12,10 @@ var camera_speed = 0
 func _process(_delta: float) -> void:
 	# flowchart for animation, air > moving > idle
 	if not is_on_floor():
+		anim.speed_scale = 1
 		anim.play("playerJump")
 	elif abs(velocity.x) > 20:
+		anim.speed_scale = clampf(velocity.x / SPEED, 0.5, 2)
 		anim.play("playerRun")
 	else:
 		anim.play("playerIdle")
