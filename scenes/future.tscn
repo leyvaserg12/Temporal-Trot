@@ -1,8 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://bw3bayq8rhcm0"]
 
 [ext_resource type="Texture2D" uid="uid://xrt1i11sbqfl" path="res://assets/TileCraftGroundSetVersion2.png" id="1_04dbh"]
-[ext_resource type="Script" path="res://scripts/future.gd" id="1_pyh55"]
 [ext_resource type="PackedScene" uid="uid://1q5mf4h2pei3" path="res://scenes/obstacle.tscn" id="2_8sya7"]
+
+[sub_resource type="GDScript" id="GDScript_rcre1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_anhnv"]
 texture = ExtResource("1_04dbh")
@@ -96,7 +97,7 @@ physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_anhnv")
 
 [node name="Future" type="Node2D"]
-script = ExtResource("1_pyh55")
+script = SubResource("GDScript_rcre1")
 
 [node name="Terrain" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_r242a")

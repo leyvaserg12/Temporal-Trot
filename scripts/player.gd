@@ -30,8 +30,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("mv_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("mv_left", "mv_right")
 	if direction:
 		velocity.x = direction * SPEED + camera_speed
@@ -40,7 +38,6 @@ func _physics_process(delta: float) -> void:
 		
 	move_and_slide()
 
-
+# this isn't a great way to update the player's speed, but it works for the moment
 func _on_camera_speed_update(cspeed) -> void:
 	camera_speed = cspeed
-	print(cspeed)
