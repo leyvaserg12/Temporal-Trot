@@ -1,9 +1,11 @@
+class_name Obstacle
+
 extends Area2D
 
-signal player_collided
-
-@onready var player = get_tree().root.get_child(0).get_node("Player")
+@onready var root = get_tree().root.get_child(0) as Game
+@onready var player = root.get_node("Player")
 
 func _on_body_entered(body: Node) -> void:
-	if body == player:
-		player_collided.emit()
+	if body == player and is_visible_in_tree():
+		root.player_collided.emit()
+		
