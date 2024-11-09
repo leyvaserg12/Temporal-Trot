@@ -62,6 +62,7 @@ flat = true
 visible = false
 
 [node name="FadeTransition" parent="." instance=ExtResource("2_mla76")]
+visible = false
 
 [node name="Timer" type="Timer" parent="FadeTransition"]
 

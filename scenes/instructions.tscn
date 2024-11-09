@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://g665dcekf2ol"]
 
-[ext_resource type="Script" path="res://scenes/instructions.gd" id="1_l08bq"]
+[ext_resource type="Script" path="res://scripts/instructions.gd" id="1_l08bq"]
 [ext_resource type="Texture2D" uid="uid://cx42xcgg3pkt7" path="res://assets/textures/ui/Game Cover Page.png" id="2_x5swl"]
 [ext_resource type="Texture2D" uid="uid://b7i7r42qim0q8" path="res://assets/textures/ui/Instruction Cover Page.png" id="3_se4ow"]
 [ext_resource type="Texture2D" uid="uid://b77wherpkl7px" path="res://assets/textures/ui/exit_page.png" id="5_gxt6x"]
