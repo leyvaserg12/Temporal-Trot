@@ -1,48 +1,66 @@
+class_name Game
+
 extends Node2D
+
+@onready var player: Player = $Player
+@onready var timer: Timer = $DeathTimer
 @onready var present: Node2D = $Present
 @onready var future: Node2D = $Future
+@onready var pparallax: CanvasLayer = $PresentParallax
+@onready var fparallax: CanvasLayer = $FutureParallax
 
-@onready var current_dimension = present
+enum {PRESENT, FUTURE}
+enum STATE {RUNNING, GAMEOVER}
 
-# Called when the node enters the scene tree for the first time.
+var current_dimension = PRESENT
+var state: STATE = STATE.RUNNING
+
+# seperate signals, just in case the player somehow survives
+signal player_collided
+signal player_died
+
 func _ready() -> void:
-
-	$Fade_transition/AnimationPlayer.play("fade_out")
-
+	# make sure the present and future are in the right state
+	toggle_dimension(present, true)
+	toggle_dimension(future, false)
 	
-	#Connecting collision signal from all existing obstacles
-	#will need to change as procedural generated obstacles are implemented
-	for obstacle in present.get_node("Obstacle_Manager").get_children():
-		obstacle.connect("player_collided", _player_dies) 	
-		
-	for obstacle in future.get_node("Obstacle_Manager").get_children():
-		obstacle.connect("player_collided", _player_dies) 	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+	timer.timeout.connect(reload)
+	player_collided.connect(player_dies)
 	
-	#teleport check
-	if Input.is_action_just_pressed("teleport"):
-		print("Teleport")
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("mv_tele"):
 		teleport()
 
-func teleport():
+func toggle_dimension(dim: Node2D, vis: bool):
+	dim.visible = vis
+	var layer = 1 if vis else 0
 	
-	#present to future
-	if current_dimension == present:
-		current_dimension = future
-		present.is_here = false
-		future.is_here = true
-		
-		
-	#future to present
-	else:
-		current_dimension = present
-		present.is_here = true
-		future.is_here = false
-		
+	dim.get_node("Terrain").tile_set.set_physics_layer_collision_layer(0, layer)
 
-func _player_dies():
-	get_tree().quit()
+func teleport():
+	if current_dimension == PRESENT:
+		current_dimension = FUTURE
+		
+		toggle_dimension(future, true)
+		fparallax.visible = true
+		toggle_dimension(present, false)
+		pparallax.visible = false
+	else:
+		current_dimension = PRESENT
+		toggle_dimension(present, true)
+		pparallax.visible = true
+		toggle_dimension(future, false)
+		fparallax.visible = false
+
+func player_dies():
+	# get_tree().quit()
 	print("Player Died")
+	player_died.emit()
+	player.queue_free()
+	timer.start()
+	
+	
+func reload():
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	

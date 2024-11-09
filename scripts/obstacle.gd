@@ -1,18 +1,11 @@
+class_name Obstacle
+
 extends Area2D
 
-signal player_collided
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
+@onready var root = get_tree().root.get_child(0) as Game
+@onready var player = root.get_node("Player")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-
-func _on_body_entered(body: Node2D) -> void:
-	print("collision")
-	emit_signal("player_collided")
-	
+func _on_body_entered(body: Node) -> void:
+	if body == player and is_visible_in_tree():
+		root.player_collided.emit()
+		
