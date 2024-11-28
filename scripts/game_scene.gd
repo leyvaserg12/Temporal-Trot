@@ -58,9 +58,10 @@ func player_dies():
 	print("Player Died")
 	player_died.emit()
 	player.queue_free()
+	
+	# timer starts -> timeout
 	timer.start()
 	
-	
 func reload():
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
 	
