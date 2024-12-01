@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://xrt1i11sbqfl" path="res://assets/textures/tileset/TileCraftGroundSetVersion2.png" id="1_mqx70"]
 [ext_resource type="PackedScene" uid="uid://1q5mf4h2pei3" path="res://scenes/obstacle.tscn" id="2_nrbh6"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqlny"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5fak1"]
 texture = ExtResource("1_mqx70")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -168,12 +168,12 @@ texture = ExtResource("1_mqx70")
 8:8/0 = 0
 8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSet" id="TileSet_q4tcl"]
+[sub_resource type="TileSet" id="TileSet_80gkd"]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
-sources/0 = SubResource("TileSetAtlasSource_yqlny")
+sources/0 = SubResource("TileSetAtlasSource_5fak1")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_anhnv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lwh8o"]
 texture = ExtResource("1_mqx70")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -338,9 +338,9 @@ texture = ExtResource("1_mqx70")
 8:8/0 = 0
 8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSet" id="TileSet_r242a"]
+[sub_resource type="TileSet" id="TileSet_ghb1b"]
 physics_layer_0/collision_layer = 2
-sources/0 = SubResource("TileSetAtlasSource_anhnv")
+sources/0 = SubResource("TileSetAtlasSource_lwh8o")
 
 [node name="TemplateSetpiece" type="Node2D"]
 texture_filter = 1
@@ -350,7 +350,7 @@ texture_filter = 1
 [node name="Terrain" type="TileMapLayer" parent="Present"]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAEAAAABAAMAAAABAAEAAAABAAIAAAABAAEAAAABAAEAAAABAAEAAAACAAEAAAABAAEAAAADAAEAAAABAAEAAAADAAIAAAABAAEAAAACAAIAAAABAAEAAAACAAMAAAABAAEAAAADAAMAAAABAAEAAAAEAAMAAAABAAEAAAAEAAIAAAABAAEAAAAEAAEAAAABAAEAAAA=")
-tile_set = SubResource("TileSet_q4tcl")
+tile_set = SubResource("TileSet_80gkd")
 
 [node name="Obstacle" parent="Present" instance=ExtResource("2_nrbh6")]
 position = Vector2(41, -10)
@@ -361,7 +361,7 @@ scale = Vector2(1, 1)
 [node name="Terrain" type="TileMapLayer" parent="Future"]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAAAAAAAAAEAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAAAAEAAAAEAAEAAAAAAAIAAAAEAAEAAAAAAAMAAAAEAAEAAAABAAMAAAAEAAEAAAABAAIAAAAEAAEAAAABAAEAAAAEAAEAAAACAAEAAAAEAAEAAAACAAIAAAAEAAEAAAACAAMAAAAEAAEAAAADAAMAAAAEAAEAAAADAAIAAAAEAAEAAAADAAEAAAAEAAEAAAAEAAEAAAAEAAEAAAAEAAIAAAAEAAEAAAAEAAMAAAAEAAEAAAA=")
-tile_set = SubResource("TileSet_r242a")
+tile_set = SubResource("TileSet_ghb1b")
 
 [node name="Obstacle" parent="Future" instance=ExtResource("2_nrbh6")]
 position = Vector2(40, -72)
