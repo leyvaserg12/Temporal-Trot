@@ -17,8 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://b3wdtnkvsqoh2" path="res://assets/unused/terrain/city backgrounds/city 6/3.png" id="15_14bvg"]
 [ext_resource type="Texture2D" uid="uid://boirau177e86l" path="res://assets/unused/terrain/city backgrounds/city 6/4.png" id="16_iun5e"]
 [ext_resource type="Texture2D" uid="uid://i4d6cxg81omo" path="res://assets/unused/terrain/city backgrounds/city 6/5.png" id="17_bnsky"]
-[ext_resource type="PackedScene" uid="uid://b2xy14gycbyvk" path="res://scenes/score_display.tscn" id="18_73h2s"]
-[ext_resource type="Script" path="res://scenes/score_display.gd" id="19_b4dyo"]
+[ext_resource type="PackedScene" uid="uid://0vsfpy0g3bao" path="res://scenes/score_display.tscn" id="18_1sa2p"]
+[ext_resource type="PackedScene" uid="uid://dh0fd3xppiy7p" path="res://scenes/game_over.tscn" id="19_vy76h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqlny"]
 texture = ExtResource("3_5raix")
@@ -552,7 +552,7 @@ repeat_times = 4
 texture = ExtResource("17_bnsky")
 centered = false
 
-[node name="scoreDisplay" parent="." instance=ExtResource("18_73h2s")]
-script = ExtResource("19_b4dyo")
+[node name="scoreDisplay" parent="." instance=ExtResource("18_1sa2p")]
 
-[connection signal="player_died" from="." to="scoreDisplay" method="_on_game_scene_player_died"]
+[node name="gameOver" parent="." instance=ExtResource("19_vy76h")]
+visible = false
