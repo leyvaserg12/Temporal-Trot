@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://f2qayjpju5kx"]
+[gd_scene load_steps=8 format=4 uid="uid://f2qayjpju5kx"]
 
+[ext_resource type="Script" path="res://setpiece_class.gd" id="1_4wrhp"]
 [ext_resource type="Texture2D" uid="uid://xrt1i11sbqfl" path="res://assets/textures/tileset/TileCraftGroundSetVersion2.png" id="1_mqx70"]
 [ext_resource type="PackedScene" uid="uid://1q5mf4h2pei3" path="res://scenes/obstacle.tscn" id="2_nrbh6"]
 
@@ -342,8 +343,13 @@ texture = ExtResource("1_mqx70")
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_lwh8o")
 
-[node name="TemplateSetpiece" type="Node2D"]
+[node name="TemplateSetpiece" type="Node2D" node_paths=PackedStringArray("Present", "Future", "Start", "End")]
 texture_filter = 1
+script = ExtResource("1_4wrhp")
+Present = NodePath("Present")
+Future = NodePath("Future")
+Start = NodePath("Start")
+End = NodePath("End")
 
 [node name="Present" type="Node2D" parent="."]
 
