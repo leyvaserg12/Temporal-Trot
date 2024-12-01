@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=4 uid="uid://f2qayjpju5kx"]
 
-[ext_resource type="Script" path="res://setpiece_class.gd" id="1_4wrhp"]
+[ext_resource type="Script" path="res://scripts/setpiece_class.gd" id="1_4wrhp"]
 [ext_resource type="Texture2D" uid="uid://xrt1i11sbqfl" path="res://assets/textures/tileset/TileCraftGroundSetVersion2.png" id="1_mqx70"]
 [ext_resource type="PackedScene" uid="uid://1q5mf4h2pei3" path="res://scenes/obstacle.tscn" id="2_nrbh6"]
 
