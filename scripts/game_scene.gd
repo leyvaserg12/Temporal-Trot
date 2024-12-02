@@ -19,8 +19,6 @@ var state: STATE = STATE.RUNNING
 signal player_collided
 signal player_died
 
-# signal to keep the current score
-signal currentScore(score)
 func _ready() -> void:
 	# make sure the present and future are in the right state
 	toggle_dimension(present, true)
@@ -63,4 +61,4 @@ func player_dies():
 	timer.start()
 	
 func reload():
-	get_tree().change_scene_to_file("res://scenes/game_over.tscn")	
+	get_tree().change_scene_to_file("res://scenes/end_scene.tscn")	

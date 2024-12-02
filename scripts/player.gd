@@ -22,8 +22,7 @@ func _process(_delta: float) -> void:
 		anim.speed_scale = clampf(velocity.x / SPEED, 0.5, 2)
 		anim.play("playerRun")
 	else:
-		anim.play("playerIdle")
-		
+		anim.play("playerIdle")		
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

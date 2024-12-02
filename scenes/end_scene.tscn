@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=3 uid="uid://co6o32upyik7m"]
+
+[ext_resource type="Script" path="res://scenes/end_scene.gd" id="1_jwbkx"]
+[ext_resource type="Texture2D" uid="uid://qnpkuqes51f2" path="res://assets/textures/ui/death_screen_ui/background.png" id="1_uaduu"]
+[ext_resource type="Texture2D" uid="uid://blgbemkcq0djd" path="res://assets/textures/ui/death_screen_ui/placement.png" id="2_31x15"]
+[ext_resource type="Texture2D" uid="uid://jtfuf4h0ds0e" path="res://assets/textures/ui/death_screen_ui/current_score_title.png" id="3_xhigs"]
+[ext_resource type="Texture2D" uid="uid://fucq7n0ck6cx" path="res://assets/textures/ui/death_screen_ui/title.png" id="4_g7mgh"]
+[ext_resource type="Texture2D" uid="uid://b5j57rc6ucchf" path="res://assets/textures/ui/death_screen_ui/restart_idle.png" id="5_31dx7"]
+[ext_resource type="Texture2D" uid="uid://dbeyyajx3mveo" path="res://assets/textures/ui/death_screen_ui/restart_hover.png" id="6_oyaf1"]
+[ext_resource type="FontFile" uid="uid://c80dpccvtot5l" path="res://assets/textures/ui/fonts/retro_font.ttf" id="7_hmff3"]
+
+[node name="endScreen" type="CanvasLayer"]
+script = ExtResource("1_jwbkx")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_uaduu")
+expand_mode = 1
+
+[node name="placement" type="Sprite2D" parent="Background"]
+position = Vector2(336, 343)
+scale = Vector2(0.205, 0.205)
+texture = ExtResource("2_31x15")
+
+[node name="currentScore_title" type="Sprite2D" parent="Background"]
+position = Vector2(347, 595)
+scale = Vector2(0.087, 0.095)
+texture = ExtResource("3_xhigs")
+
+[node name="Title" type="Sprite2D" parent="Background"]
+position = Vector2(616, 83)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("4_g7mgh")
+
+[node name="Restart" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 610.0
+offset_right = 873.0
+offset_bottom = 721.0
+texture_normal = ExtResource("5_31dx7")
+texture_pressed = ExtResource("5_31dx7")
+texture_hover = ExtResource("6_oyaf1")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="first" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 713.0
+offset_top = 159.0
+offset_right = 1209.0
+offset_bottom = 218.0
+theme_override_fonts/font = ExtResource("7_hmff3")
+theme_override_font_sizes/font_size = 43
+text = "-----"
+
+[node name="second" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 239.0
+offset_right = 1210.0
+offset_bottom = 298.0
+theme_override_fonts/font = ExtResource("7_hmff3")
+theme_override_font_sizes/font_size = 43
+text = "-----"
+
+[node name="third" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 317.0
+offset_right = 1210.0
+offset_bottom = 376.0
+theme_override_fonts/font = ExtResource("7_hmff3")
+theme_override_font_sizes/font_size = 43
+text = "-----"
+
+[node name="fourth" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 402.0
+offset_right = 1210.0
+offset_bottom = 461.0
+theme_override_fonts/font = ExtResource("7_hmff3")
+theme_override_font_sizes/font_size = 43
+text = "-----"
+
+[node name="fifth" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 715.0
+offset_top = 478.0
+offset_right = 1211.0
+offset_bottom = 537.0
+theme_override_fonts/font = ExtResource("7_hmff3")
+theme_override_font_sizes/font_size = 43
+text = "-----"
+
+[node name="currentScore" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 706.0
+offset_top = 556.0
+offset_right = 1202.0
+offset_bottom = 623.0
+theme_override_fonts/font = ExtResource("7_hmff3")
+theme_override_font_sizes/font_size = 52
+
+[connection signal="pressed" from="Background/Restart" to="." method="_on_restart_pressed"]
