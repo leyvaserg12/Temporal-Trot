@@ -6,17 +6,17 @@
 [ext_resource type="SpriteFrames" uid="uid://cbuwm6nxgehj0" path="res://assets/animations/player_movement.tres" id="5_65crq"]
 [ext_resource type="PackedScene" uid="uid://bde3vdd56tkcq" path="res://scenes/fade_transition.tscn" id="5_a68w4"]
 [ext_resource type="Script" path="res://scripts/camera_2d.gd" id="5_n1d5g"]
-[ext_resource type="Texture2D" uid="uid://d0ddmsobensri" path="res://assets/textures/parallax/present/1.png" id="8_aepa1"]
-[ext_resource type="Texture2D" uid="uid://s2me4dt48qbk" path="res://assets/textures/parallax/present/2.png" id="9_liifb"]
-[ext_resource type="Texture2D" uid="uid://b17x2owso6lds" path="res://assets/textures/parallax/present/3.png" id="10_fux36"]
-[ext_resource type="Texture2D" uid="uid://cg65lc183fqlg" path="res://assets/textures/parallax/present/4.png" id="11_b5qsx"]
-[ext_resource type="Texture2D" uid="uid://c3cye0a6j07qs" path="res://assets/textures/parallax/present/5.png" id="12_ctqsc"]
-[ext_resource type="Texture2D" uid="uid://dm63k1f2vsmfk" path="res://assets/textures/parallax/future/1.png" id="13_lauie"]
-[ext_resource type="Texture2D" uid="uid://5wl3vcjidin" path="res://assets/textures/parallax/future/2.png" id="14_dydh3"]
-[ext_resource type="Texture2D" uid="uid://b3wdtnkvsqoh2" path="res://assets/textures/parallax/future/3.png" id="15_14bvg"]
-[ext_resource type="Texture2D" uid="uid://boirau177e86l" path="res://assets/textures/parallax/future/4.png" id="16_iun5e"]
+[ext_resource type="Texture2D" uid="uid://d0ddmsobensri" path="res://assets/unused/terrain/city backgrounds/city 7/1.png" id="8_aepa1"]
+[ext_resource type="Texture2D" uid="uid://s2me4dt48qbk" path="res://assets/unused/terrain/city backgrounds/city 7/2.png" id="9_liifb"]
+[ext_resource type="Texture2D" uid="uid://b17x2owso6lds" path="res://assets/unused/terrain/city backgrounds/city 7/3.png" id="10_fux36"]
+[ext_resource type="Texture2D" uid="uid://cg65lc183fqlg" path="res://assets/unused/terrain/city backgrounds/city 7/4.png" id="11_b5qsx"]
+[ext_resource type="Texture2D" uid="uid://c3cye0a6j07qs" path="res://assets/unused/terrain/city backgrounds/city 7/5.png" id="12_ctqsc"]
+[ext_resource type="Texture2D" uid="uid://dm63k1f2vsmfk" path="res://assets/unused/terrain/city backgrounds/city 6/1.png" id="13_lauie"]
+[ext_resource type="Texture2D" uid="uid://5wl3vcjidin" path="res://assets/unused/terrain/city backgrounds/city 6/2.png" id="14_dydh3"]
+[ext_resource type="Texture2D" uid="uid://b3wdtnkvsqoh2" path="res://assets/unused/terrain/city backgrounds/city 6/3.png" id="15_14bvg"]
+[ext_resource type="Texture2D" uid="uid://boirau177e86l" path="res://assets/unused/terrain/city backgrounds/city 6/4.png" id="16_iun5e"]
 [ext_resource type="Script" path="res://scripts/setpiece_class.gd" id="16_x7b7j"]
-[ext_resource type="Texture2D" uid="uid://i4d6cxg81omo" path="res://assets/textures/parallax/future/5.png" id="17_bnsky"]
+[ext_resource type="Texture2D" uid="uid://i4d6cxg81omo" path="res://assets/unused/terrain/city backgrounds/city 6/5.png" id="17_bnsky"]
 [ext_resource type="PackedScene" uid="uid://dv5tqq7k1ru5" path="res://setpieces/john_set1.tscn" id="18_iyr05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5pil"]
@@ -381,7 +381,7 @@ texture_filter = 1
 position = Vector2(-0.333333, 0.333335)
 scale = Vector2(0.15625, 0.15625)
 sprite_frames = ExtResource("5_65crq")
-animation = &"playerIdle"
+animation = &"playerTeleport"
 
 [node name="FadeTransition" parent="." instance=ExtResource("5_a68w4")]
 metadata/_edit_use_anchors_ = true
