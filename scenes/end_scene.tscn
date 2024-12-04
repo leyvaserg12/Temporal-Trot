@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxr1r28oij0ju"]
+
+[ext_resource type="Script" path="res://scripts/end_scene.gd" id="1_jwbkx"]
+[ext_resource type="SpriteFrames" uid="uid://cbuwm6nxgehj0" path="res://assets/animations/player_movement.tres" id="2_cbt5v"]
+[ext_resource type="FontFile" path="res://assets/textures/ui/fonts/retro_font.ttf" id="7_hmff3"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_iivym"]
+blend_mode = 1
+
+[node name="endScreen" type="CanvasLayer"]
+script = ExtResource("1_jwbkx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(705, 263)
+scale = Vector2(14.745, 14.745)
+sprite_frames = ExtResource("2_cbt5v")
+animation = &"playerTeleport"
+frame_progress = 0.514989
+
+[node name="title" type="Label" parent="."]
+offset_left = 69.0
+offset_top = 289.0
+offset_right = 1225.0
+offset_bottom = 367.0
+theme_override_fonts/font = ExtResource("7_hmff3")
+theme_override_font_sizes/font_size = 61
+text = "click the screen to play again"
+
+[node name="currentScore" type="Label" parent="."]
+offset_left = 69.0
+offset_top = 102.0
+offset_right = 1225.0
+offset_bottom = 180.0
+theme_override_fonts/font = ExtResource("7_hmff3")
+theme_override_font_sizes/font_size = 61
+text = "current score:"
+
+[node name="restart" type="Button" parent="."]
+material = SubResource("CanvasItemMaterial_iivym")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_disabled_color = Color(0.851769, 0.851769, 0.851769, 1)
+text = "
+"
+
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
