@@ -10,19 +10,32 @@ extends CharacterBody2D
 
 @onready var anim: AnimatedSprite2D = $Sprite
 
+@onready var teleporting = false
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 func _process(_delta: float) -> void:
 	# flowchart for animation, air > moving > idle
-	if not is_on_floor():
-		anim.speed_scale = 1
-		anim.play("playerJump")
-	elif abs(velocity.x) > 20:
-		anim.speed_scale = clampf(velocity.x / SPEED, 0.5, 2)
-		anim.play("playerRun")
+	if not teleporting:
+		if not is_on_floor():
+			anim.speed_scale = 1
+			anim.play("playerJump")
+		elif abs(velocity.x) > 20:
+			anim.speed_scale = clampf(velocity.x / SPEED, 0.5, 2)
+			anim.play("playerRun")
+		else:
+			anim.play("playerIdle")
+			
+	# teleport animation in _handle_teleport()
 	else:
+<<<<<<< HEAD
 		anim.play("playerIdle")		
+=======
+		if not anim.is_playing():
+			teleporting = false
+		
+>>>>>>> 32c0d22647c83570f6bd63679dd32267e66d8bae
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -32,6 +45,10 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("mv_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		
+	# Handle Teleport Animation
+	if Input.is_action_just_pressed("mv_tele"):
+		_handle_teleport()
 	
 	# Move the dude.
 	var direction := Input.get_axis("mv_left", "mv_right")
@@ -46,3 +63,9 @@ func _physics_process(delta: float) -> void:
 		game.player_collided.emit()
 	
 	move_and_slide()
+
+func _handle_teleport():
+	teleporting = true
+	anim.stop()
+	anim.speed_scale = 1.25
+	anim.play("playerTeleport")

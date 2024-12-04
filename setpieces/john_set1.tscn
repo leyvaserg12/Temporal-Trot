@@ -1,15 +1,12 @@
-<<<<<<< HEAD
-[gd_scene load_steps=8 format=4 uid="uid://c4ovm5fgsgc55"]
-=======
-[gd_scene load_steps=8 format=4 uid="uid://f2qayjpju5kx"]
->>>>>>> 32c0d22647c83570f6bd63679dd32267e66d8bae
+[gd_scene load_steps=10 format=4 uid="uid://dv5tqq7k1ru5"]
 
-[ext_resource type="Script" path="res://scripts/setpiece_class.gd" id="1_4wrhp"]
-[ext_resource type="Texture2D" uid="uid://xrt1i11sbqfl" path="res://assets/textures/tileset/TileCraftGroundSetVersion2.png" id="1_mqx70"]
-[ext_resource type="PackedScene" uid="uid://1q5mf4h2pei3" path="res://scenes/obstacle.tscn" id="2_nrbh6"]
+[ext_resource type="Script" path="res://scripts/setpiece_class.gd" id="1_uijxj"]
+[ext_resource type="Texture2D" uid="uid://xrt1i11sbqfl" path="res://assets/textures/tileset/TileCraftGroundSetVersion2.png" id="2_exu6c"]
+[ext_resource type="Texture2D" uid="uid://bo5u4rmqiru1w" path="res://assets/textures/tileset/john_heli-1.png.png" id="4_6s2sr"]
+[ext_resource type="Script" path="res://setpieces/prefabs/helicrane.gd" id="5_1blns"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5fak1"]
-texture = ExtResource("1_mqx70")
+texture = ExtResource("2_exu6c")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -179,7 +176,7 @@ physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_5fak1")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lwh8o"]
-texture = ExtResource("1_mqx70")
+texture = ExtResource("2_exu6c")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -347,9 +344,13 @@ texture = ExtResource("1_mqx70")
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_lwh8o")
 
-[node name="TemplateSetpiece" type="Node2D" node_paths=PackedStringArray("Present", "Future", "Start", "End")]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gawl0"]
+radius = 33.7838
+height = 256.757
+
+[node name="john_set1" type="Node2D" node_paths=PackedStringArray("Present", "Future", "Start", "End")]
 texture_filter = 1
-script = ExtResource("1_4wrhp")
+script = ExtResource("1_uijxj")
 Present = NodePath("Present")
 Future = NodePath("Future")
 Start = NodePath("Start")
@@ -359,25 +360,50 @@ End = NodePath("End")
 
 [node name="Terrain" type="TileMapLayer" parent="Present"]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAEAAAABAAMAAAABAAEAAAABAAIAAAABAAEAAAABAAEAAAABAAEAAAACAAEAAAABAAEAAAADAAEAAAABAAEAAAADAAIAAAABAAEAAAACAAIAAAABAAEAAAACAAMAAAABAAEAAAADAAMAAAABAAEAAAAEAAMAAAABAAEAAAAEAAIAAAABAAEAAAAEAAEAAAABAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAEAAAABAAMAAAABAAEAAAABAAIAAAABAAEAAAABAAEAAAABAAEAAAACAAEAAAABAAEAAAADAAEAAAABAAEAAAADAAIAAAABAAEAAAACAAIAAAABAAEAAAACAAMAAAABAAEAAAADAAMAAAABAAEAAAAEAAMAAAABAAEAAAAEAAIAAAABAAEAAAAEAAEAAAABAAEAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAmAAAAAAAAAAAAAAAmAAEAAAAAAAEAAAAmAAIAAAAAAAEAAAAmAAMAAAAAAAEAAAAnAAAAAAABAAAAAAAnAAEAAAABAAEAAAAnAAIAAAABAAEAAAAnAAMAAAABAAEAAAAFAAEAAAABAAEAAAAFAAIAAAABAAEAAAAFAAMAAAABAAEAAAAGAAMAAAABAAEAAAAGAAIAAAABAAEAAAAGAAEAAAABAAEAAAAHAAEAAAABAAEAAAAHAAIAAAABAAEAAAAHAAMAAAABAAEAAAAIAAEAAAABAAEAAAAIAAIAAAABAAEAAAAIAAMAAAABAAEAAAAJAAAAAAABAAAAAAAKAAAAAAACAAAAAAAKAAEAAAACAAEAAAAKAAIAAAACAAEAAAAKAAMAAAACAAEAAAAJAAEAAAABAAEAAAAJAAIAAAABAAEAAAAJAAMAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_80gkd")
-
-[node name="Obstacle" parent="Present" instance=ExtResource("2_nrbh6")]
-position = Vector2(41, -10)
-scale = Vector2(1, 1)
 
 [node name="Future" type="Node2D" parent="."]
 
 [node name="Terrain" type="TileMapLayer" parent="Future"]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAAAAAAAEAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAAAAEAAAAEAAEAAAAAAAIAAAAEAAEAAAAAAAMAAAAEAAEAAAABAAMAAAAEAAEAAAABAAIAAAAEAAEAAAABAAEAAAAEAAEAAAACAAEAAAAEAAEAAAACAAIAAAAEAAEAAAACAAMAAAAEAAEAAAADAAMAAAAEAAEAAAADAAIAAAAEAAEAAAADAAEAAAAEAAEAAAAEAAEAAAAEAAEAAAAEAAIAAAAEAAEAAAAEAAMAAAAEAAEAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAEAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAAAAEAAAAEAAEAAAAAAAIAAAAEAAEAAAAAAAMAAAAEAAEAAAABAAMAAAAEAAEAAAABAAIAAAAEAAEAAAABAAEAAAAEAAEAAAACAAEAAAAEAAEAAAACAAIAAAAEAAEAAAACAAMAAAAEAAEAAAADAAMAAAAEAAEAAAADAAIAAAAEAAEAAAADAAEAAAAEAAEAAAAEAAEAAAAEAAEAAAAEAAIAAAAEAAEAAAAEAAMAAAAEAAEAAAAFAAAAAAAEAAAAAAAFAAEAAAAEAAEAAAAGAAAAAAAEAAAAAAAGAAEAAAAEAAEAAAAHAAAAAAAEAAAAAAAHAAEAAAAEAAEAAAAIAAAAAAAEAAAAAAAIAAEAAAAEAAEAAAAJAAAAAAAEAAAAAAAJAAEAAAAEAAEAAAAKAAAAAAAEAAAAAAAKAAEAAAAEAAEAAAALAAAAAAAEAAAAAAALAAEAAAAEAAEAAAAMAAAAAAAEAAAAAAAMAAEAAAAEAAEAAAANAAAAAAAEAAAAAAANAAEAAAAEAAEAAAAOAAAAAAAEAAAAAAAOAAEAAAAEAAEAAAAFAAIAAAAEAAEAAAAGAAIAAAAEAAEAAAAHAAIAAAAEAAEAAAAIAAIAAAAEAAEAAAAJAAIAAAAEAAEAAAAKAAIAAAAEAAEAAAALAAIAAAAEAAEAAAAMAAIAAAAEAAEAAAANAAIAAAAEAAEAAAAOAAIAAAAEAAEAAAAOAAMAAAAEAAEAAAANAAMAAAAEAAEAAAAMAAMAAAAEAAEAAAALAAMAAAAEAAEAAAAKAAMAAAAEAAEAAAAJAAMAAAAEAAEAAAAIAAMAAAAEAAEAAAAHAAMAAAAEAAEAAAAGAAMAAAAEAAEAAAAFAAMAAAAEAAEAAAAPAAAAAAAEAAAAAAAPAAEAAAAEAAEAAAAQAAAAAAAEAAAAAAAQAAEAAAAEAAEAAAARAAAAAAAEAAAAAAARAAEAAAAEAAEAAAAPAAIAAAAEAAEAAAAQAAIAAAAEAAEAAAARAAIAAAAEAAEAAAARAAMAAAAEAAEAAAAQAAMAAAAEAAEAAAAPAAMAAAAEAAEAAAASAAAAAAAFAAAAAAASAAEAAAAFAAEAAAASAAIAAAAFAAEAAAASAAMAAAAFAAEAAAAmAAAAAAADAAAAAAAmAAEAAAADAAEAAAAmAAIAAAADAAEAAAAmAAMAAAADAAEAAAAnAAAAAAAEAAAAAAAnAAEAAAAEAAEAAAAnAAIAAAAEAAEAAAAnAAMAAAAEAAEAAAA=")
 tile_set = SubResource("TileSet_ghb1b")
 
-[node name="Obstacle" parent="Future" instance=ExtResource("2_nrbh6")]
-position = Vector2(40, -72)
-scale = Vector2(1, 1)
+[node name="helicrane" type="Area2D" parent="Future"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_1blns")
+
+[node name="Collision" type="CollisionShape2D" parent="Future/helicrane"]
+position = Vector2(87, -22)
+scale = Vector2(0.148, 0.148)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Future/helicrane"]
+position = Vector2(87, -17)
+scale = Vector2(0.645833, 0.645833)
+texture = ExtResource("4_6s2sr")
+
+[node name="helicrane2" type="Area2D" parent="Future"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_1blns")
+
+[node name="Collision" type="CollisionShape2D" parent="Future/helicrane2"]
+position = Vector2(238, -67)
+scale = Vector2(0.148, 0.148)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Future/helicrane2"]
+position = Vector2(238, -62)
+scale = Vector2(0.645833, 0.645833)
+texture = ExtResource("4_6s2sr")
 
 [node name="Start" type="Node2D" parent="."]
 
 [node name="End" type="Node2D" parent="."]
-position = Vector2(80, 0)
+position = Vector2(640, -1)
+
+[connection signal="body_entered" from="Future/helicrane" to="Future/helicrane" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/helicrane2" to="Future/helicrane2" method="_on_body_entered"]
