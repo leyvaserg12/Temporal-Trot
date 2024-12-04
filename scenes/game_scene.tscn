@@ -23,6 +23,51 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5pil"]
 size = Vector2(5, 6)
 
+[sub_resource type="Gradient" id="Gradient_j3nkm"]
+offsets = PackedFloat32Array(0, 0.5)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lp5sv"]
+gradient = SubResource("Gradient_j3nkm")
+fill_from = Vector2(0, 0.0321101)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Animation" id="Animation_ubx54"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_im665"]
+resource_name = "teleportFlash"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.356863, 0.92549, 0.945098, 1), Color(1, 1, 1, 0), Color(0.356863, 0.92549, 0.945098, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3rw8a"]
+_data = {
+"RESET": SubResource("Animation_ubx54"),
+"teleportFlash": SubResource("Animation_im665")
+}
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5fak1"]
 texture = ExtResource("3_5raix")
 0:0/0 = 0
@@ -362,51 +407,6 @@ texture = ExtResource("3_5raix")
 physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_lwh8o")
 
-[sub_resource type="Gradient" id="Gradient_j3nkm"]
-offsets = PackedFloat32Array(0, 0.5)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_lp5sv"]
-gradient = SubResource("Gradient_j3nkm")
-fill_from = Vector2(0, 0.0321101)
-fill_to = Vector2(0, 1)
-
-[sub_resource type="Animation" id="Animation_im665"]
-resource_name = "teleportFlash"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(0.356863, 0.92549, 0.945098, 1), Color(1, 1, 1, 0), Color(0.356863, 0.92549, 0.945098, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_ubx54"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3rw8a"]
-_data = {
-"RESET": SubResource("Animation_ubx54"),
-"teleportFlash": SubResource("Animation_im665")
-}
-
 [node name="GameScene" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_ktwq3")
@@ -439,6 +439,22 @@ position = Vector2(320, -180)
 zoom = Vector2(2, 2)
 script = ExtResource("5_n1d5g")
 maxSpeed = 192
+
+[node name="Teleport Flash" type="Node2D" parent="Camera"]
+position = Vector2(-320, 180)
+script = ExtResource("19_oqp0x")
+
+[node name="TextureRect" type="TextureRect" parent="Camera/Teleport Flash"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(16.0033, -8.99887)
+texture = SubResource("GradientTexture2D_lp5sv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera/Teleport Flash"]
+libraries = {
+"": SubResource("AnimationLibrary_3rw8a")
+}
 
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 3.0
@@ -665,18 +681,3 @@ position = Vector2(640, 0)
 
 [node name="john_set1" parent="Template" instance=ExtResource("18_iyr05")]
 position = Vector2(0, -64)
-
-[node name="Teleport Flash" type="Node2D" parent="."]
-script = ExtResource("19_oqp0x")
-
-[node name="TextureRect" type="TextureRect" parent="Teleport Flash"]
-modulate = Color(1, 1, 1, 0)
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(16.0033, -8.99887)
-texture = SubResource("GradientTexture2D_lp5sv")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Teleport Flash"]
-libraries = {
-"": SubResource("AnimationLibrary_3rw8a")
-}
