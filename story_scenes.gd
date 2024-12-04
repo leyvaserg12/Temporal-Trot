@@ -13,7 +13,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 		# when mouse is pressed go to next scene
 		if Input.is_action_just_pressed("mv_jump"):
-			
 			#check if we're on last scene and go to game play after next
 			sceneNumber += 1
 			if sceneNumber > 5:
