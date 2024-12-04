@@ -62,3 +62,4 @@ func player_dies():
 	
 func reload():
 	get_tree().change_scene_to_file("res://scenes/end_scene.tscn")	
+	

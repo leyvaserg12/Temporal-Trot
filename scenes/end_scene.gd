@@ -8,16 +8,10 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	$AnimatedSprite2D.play("playerTeleport")
 
 
 func _on_restart_pressed() -> void:
 	# restart the game when button is pressed
 	get_tree().change_scene_to_file("res://scenes/game_scene.tscn")	
 	pass # Replace with function body.
-
-
-func _on_score_display_end_score(score) -> void:
-	currentScore = score
-	pass # Replace with function body.
-	
