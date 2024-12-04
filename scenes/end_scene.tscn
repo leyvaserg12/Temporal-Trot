@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cht6b1gveqnta"]
 
-[ext_resource type="Script" path="res://scenes/end_scene.gd" id="1_jwbkx"]
+[ext_resource type="Script" path="res://scripts/end_scene.gd" id="1_jwbkx"]
 [ext_resource type="SpriteFrames" uid="uid://cbuwm6nxgehj0" path="res://assets/animations/player_movement.tres" id="2_cbt5v"]
 [ext_resource type="FontFile" uid="uid://c80dpccvtot5l" path="res://assets/textures/ui/fonts/retro_font.ttf" id="7_hmff3"]
 
@@ -24,7 +24,7 @@ position = Vector2(705, 263)
 scale = Vector2(14.745, 14.745)
 sprite_frames = ExtResource("2_cbt5v")
 animation = &"playerTeleport"
-frame_progress = 0.951008
+frame_progress = 0.514989
 
 [node name="title" type="Label" parent="."]
 offset_left = 69.0
