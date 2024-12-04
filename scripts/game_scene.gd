@@ -62,7 +62,8 @@ func teleport():
 		pparallax.visible = true
 		fparallax.visible = false
 	
-	get_node("Teleport Flash")._flash()
+	#teleport flash animation
+	get_node("Camera").get_node("Teleport Flash")._flash()
 
 func player_dies():
 	# get_tree().quit()
