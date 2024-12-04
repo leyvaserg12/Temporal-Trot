@@ -61,6 +61,9 @@ func teleport():
 		toggle_dimension(DIM.PRESENT, true)
 		pparallax.visible = true
 		fparallax.visible = false
+	
+	#teleport flash animation
+	get_node("Camera").get_node("Teleport Flash")._flash()
 
 func player_dies():
 	# get_tree().quit()

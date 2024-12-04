@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bn8qadqldaxp5"]
+[gd_scene load_steps=30 format=4 uid="uid://bn8qadqldaxp5"]
 
 [ext_resource type="Script" path="res://scripts/game_scene.gd" id="1_ktwq3"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="4_is6ix"]
@@ -16,14 +16,67 @@
 [ext_resource type="Texture2D" uid="uid://boirau177e86l" path="res://assets/unused/terrain/city backgrounds/city 6/4.png" id="16_iun5e"]
 [ext_resource type="Script" path="res://scripts/setpiece_class.gd" id="16_x7b7j"]
 [ext_resource type="Texture2D" uid="uid://i4d6cxg81omo" path="res://assets/unused/terrain/city backgrounds/city 6/5.png" id="17_bnsky"]
+
 [ext_resource type="Texture2D" uid="uid://bmoe7yug5iyh4" path="res://assets/textures/tileset/updated_terrain_resized.png.png" id="17_f1mpe"]
+
 [ext_resource type="PackedScene" uid="uid://dv5tqq7k1ru5" path="res://setpieces/john_set1.tscn" id="18_iyr05"]
+[ext_resource type="Script" path="res://scripts/teleport_flash.gd" id="19_oqp0x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5pil"]
 size = Vector2(5, 6)
 
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m7rd2"]
 texture = ExtResource("17_f1mpe")
+
+[sub_resource type="Gradient" id="Gradient_j3nkm"]
+offsets = PackedFloat32Array(0, 0.5)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lp5sv"]
+gradient = SubResource("Gradient_j3nkm")
+fill_from = Vector2(0, 0.0321101)
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Animation" id="Animation_ubx54"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_im665"]
+resource_name = "teleportFlash"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.356863, 0.92549, 0.945098, 1), Color(1, 1, 1, 0), Color(0.356863, 0.92549, 0.945098, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3rw8a"]
+_data = {
+"RESET": SubResource("Animation_ubx54"),
+"teleportFlash": SubResource("Animation_im665")
+}
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5fak1"]
+texture = ExtResource("3_5raix")
+
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -255,7 +308,9 @@ texture_filter = 1
 position = Vector2(-0.333333, 0.333335)
 scale = Vector2(0.15625, 0.15625)
 sprite_frames = ExtResource("5_65crq")
-animation = &"playerIdle"
+animation = &"playerTeleport"
+frame = 2
+frame_progress = 1.0
 
 [node name="FadeTransition" parent="." instance=ExtResource("5_a68w4")]
 metadata/_edit_use_anchors_ = true
@@ -265,6 +320,22 @@ position = Vector2(320, -180)
 zoom = Vector2(2, 2)
 script = ExtResource("5_n1d5g")
 maxSpeed = 192
+
+[node name="Teleport Flash" type="Node2D" parent="Camera"]
+position = Vector2(-320, 180)
+script = ExtResource("19_oqp0x")
+
+[node name="TextureRect" type="TextureRect" parent="Camera/Teleport Flash"]
+modulate = Color(1, 1, 1, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(16.0033, -8.99887)
+texture = SubResource("GradientTexture2D_lp5sv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera/Teleport Flash"]
+libraries = {
+"": SubResource("AnimationLibrary_3rw8a")
+}
 
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 3.0
