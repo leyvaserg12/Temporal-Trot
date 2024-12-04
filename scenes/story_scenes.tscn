@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://d044mdgeiiwl8"]
+[gd_scene load_steps=8 format=3 uid="uid://d044mdgeiiwl8"]
 
 [ext_resource type="Script" path="res://story_scenes.gd" id="1_cnqyk"]
 [ext_resource type="Texture2D" uid="uid://paxryy3k5055" path="res://assets/textures/ui/story_scenes/scene1.png" id="2_rl6xc"]
+[ext_resource type="FontFile" uid="uid://c80dpccvtot5l" path="res://assets/textures/ui/fonts/retro_font.ttf" id="3_s78me"]
 
 [sub_resource type="Animation" id="Animation_vwhgb"]
 resource_name = "fade_out"
@@ -105,6 +106,19 @@ grow_vertical = 2
 texture = ExtResource("2_rl6xc")
 expand_mode = 1
 
+[node name="next page" type="Label" parent="scenes"]
+offset_left = 1038.0
+offset_top = 650.0
+offset_right = 1260.0
+offset_bottom = 715.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_fonts/font = ExtResource("3_s78me")
+theme_override_font_sizes/font_size = 46
+text = "space >"
+
 [node name="Transition" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_j7ckw")
@@ -118,5 +132,3 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
-
-[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
