@@ -8,4 +8,5 @@ extends Area2D
 func _on_body_entered(body: Node) -> void:
 	if body == player and is_visible_in_tree():
 		root.player_collided.emit()
-		
+	
+	

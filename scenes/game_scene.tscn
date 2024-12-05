@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+[gd_scene load_steps=25 format=4 uid="uid://bn8qadqldaxp5"]
+=======
 [gd_scene load_steps=30 format=4 uid="uid://bn8qadqldaxp5"]
+>>>>>>> 32c0d22647c83570f6bd63679dd32267e66d8bae
 
 [ext_resource type="Script" path="res://scripts/game_scene.gd" id="1_ktwq3"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="4_is6ix"]
@@ -14,11 +18,17 @@
 [ext_resource type="Texture2D" uid="uid://5wl3vcjidin" path="res://assets/unused/terrain/city backgrounds/city 6/2.png" id="14_dydh3"]
 [ext_resource type="Texture2D" uid="uid://b3wdtnkvsqoh2" path="res://assets/unused/terrain/city backgrounds/city 6/3.png" id="15_14bvg"]
 [ext_resource type="Texture2D" uid="uid://boirau177e86l" path="res://assets/unused/terrain/city backgrounds/city 6/4.png" id="16_iun5e"]
+<<<<<<< HEAD
+[ext_resource type="Texture2D" uid="uid://i4d6cxg81omo" path="res://assets/unused/terrain/city backgrounds/city 6/5.png" id="17_bnsky"]
+[ext_resource type="PackedScene" uid="uid://4rnhcr5nfq6w" path="res://scenes/HUD.tscn" id="18_73h2s"]
+[ext_resource type="PackedScene" uid="uid://cht6b1gveqnta" path="res://scenes/end_scene.tscn" id="19_o5n7u"]
+=======
 [ext_resource type="Script" path="res://scripts/setpiece_class.gd" id="16_x7b7j"]
 [ext_resource type="Texture2D" uid="uid://i4d6cxg81omo" path="res://assets/unused/terrain/city backgrounds/city 6/5.png" id="17_bnsky"]
 [ext_resource type="PackedScene" uid="uid://dv5tqq7k1ru5" path="res://setpieces/john_set1.tscn" id="18_iyr05"]
 [ext_resource type="Texture2D" uid="uid://cyr5yfa1esfbt" path="res://assets/textures/tileset/tileset.png" id="18_oyb8q"]
 [ext_resource type="Script" path="res://scripts/teleport_flash.gd" id="19_oqp0x"]
+>>>>>>> 32c0d22647c83570f6bd63679dd32267e66d8bae
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5pil"]
 size = Vector2(5, 6)
@@ -590,6 +600,14 @@ repeat_times = 4
 texture = ExtResource("17_bnsky")
 centered = false
 
+<<<<<<< HEAD
+[node name="scoreDisplay" parent="." instance=ExtResource("18_73h2s")]
+
+[node name="endScreen" parent="." instance=ExtResource("19_o5n7u")]
+visible = false
+
+[connection signal="player_died" from="." to="scoreDisplay" method="_on_game_scene_player_died"]
+=======
 [node name="Terrain" type="Node" parent="."]
 
 [node name="Starter" type="Node2D" parent="Terrain" node_paths=PackedStringArray("Present", "Future", "Start", "End")]
@@ -682,3 +700,4 @@ position = Vector2(640, 0)
 
 [node name="john_set1" parent="Template" instance=ExtResource("18_iyr05")]
 position = Vector2(0, -64)
+>>>>>>> 32c0d22647c83570f6bd63679dd32267e66d8bae
