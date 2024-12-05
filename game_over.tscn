@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://3mb56ctjju5p"]
+
+[ext_resource type="Script" path="res://scenes/game_over.gd" id="1_nodxc"]
+[ext_resource type="SpriteFrames" uid="uid://cbuwm6nxgehj0" path="res://assets/animations/player_movement.tres" id="2_gdl7t"]
+[ext_resource type="FontFile" uid="uid://boculbhjxk8hc" path="res://assets/textures/ui/fonts/Retro Gaming.ttf" id="3_r5p3e"]
+
+[node name="game_over" type="CanvasLayer"]
+script = ExtResource("1_nodxc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect"]
+texture_filter = 1
+position = Vector2(724, 262)
+scale = Vector2(16.655, 16.655)
+sprite_frames = ExtResource("2_gdl7t")
+animation = &"playerTeleport"
+
+[node name="restart" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 298.0
+offset_right = 1092.0
+offset_bottom = 402.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_fonts/font = ExtResource("3_r5p3e")
+theme_override_font_sizes/font_size = 81
+text = "click to play again"
+
+[connection signal="pressed" from="ColorRect/restart" to="." method="_on_restart_pressed"]

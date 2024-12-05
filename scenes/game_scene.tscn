@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://bn8qadqldaxp5"]
+[gd_scene load_steps=32 format=4 uid="uid://bn8qadqldaxp5"]
 
 [ext_resource type="Script" path="res://scripts/game_scene.gd" id="1_ktwq3"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="4_is6ix"]
@@ -19,7 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://dv5tqq7k1ru5" path="res://setpieces/john_set1.tscn" id="18_iyr05"]
 [ext_resource type="Texture2D" uid="uid://cyr5yfa1esfbt" path="res://assets/textures/tileset/tileset.png" id="18_oyb8q"]
 [ext_resource type="Script" path="res://scripts/teleport_flash.gd" id="19_oqp0x"]
-[ext_resource type="PackedScene" uid="uid://ci85iia4atwbh" path="res://scenes/hud.tscn" id="20_nbmj7"]
+[ext_resource type="PackedScene" uid="uid://dwco6nwm2fsqq" path="res://scenes/hud.tscn" id="20_nbmj7"]
+[ext_resource type="PackedScene" uid="uid://3mb56ctjju5p" path="res://game_over.tscn" id="21_ryrih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5pil"]
 size = Vector2(5, 6)
@@ -683,3 +684,7 @@ position = Vector2(640, 0)
 position = Vector2(0, -64)
 
 [node name="hud" parent="." instance=ExtResource("20_nbmj7")]
+
+[node name="game_over" parent="." instance=ExtResource("21_ryrih")]
+
+[connection signal="player_died" from="." to="hud" method="_on_game_scene_player_died"]

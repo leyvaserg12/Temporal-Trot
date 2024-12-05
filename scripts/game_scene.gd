@@ -74,8 +74,8 @@ func player_dies():
 	
 	
 func reload():
-	get_tree().change_scene_to_file("res://scenes/game_scene.tscn")
-
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	
 func _physics_process(_delta: float) -> void:
 	assert(piece_queue.size() > 0, "Out of setpieces!")
 	

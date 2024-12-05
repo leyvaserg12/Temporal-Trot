@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci85iia4atwbh"]
+[gd_scene load_steps=3 format=3 uid="uid://dwco6nwm2fsqq"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_1lvcx"]
 [ext_resource type="FontFile" uid="uid://boculbhjxk8hc" path="res://assets/textures/ui/fonts/Retro Gaming.ttf" id="2_cav84"]
