@@ -29,13 +29,9 @@ func _process(_delta: float) -> void:
 			
 	# teleport animation in _handle_teleport()
 	else:
-<<<<<<< HEAD
-		anim.play("playerIdle")		
-=======
 		if not anim.is_playing():
 			teleporting = false
 		
->>>>>>> 32c0d22647c83570f6bd63679dd32267e66d8bae
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

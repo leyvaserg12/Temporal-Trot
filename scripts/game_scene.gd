@@ -30,6 +30,7 @@ func _ready() -> void:
 	
 	timer.timeout.connect(reload)
 	player_collided.connect(player_dies)
+	
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("mv_tele"):
@@ -69,13 +70,10 @@ func player_dies():
 	print("Player Died")
 	player_died.emit()
 	player.queue_free()
-	# timer starts -> timeout
 	timer.start()
 	
+	
 func reload():
-<<<<<<< HEAD
-	get_tree().change_scene_to_file("res://scenes/end_scene.tscn")	
-=======
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func _physics_process(_delta: float) -> void:
@@ -93,5 +91,4 @@ func _physics_process(_delta: float) -> void:
 		piece_queue.append(piece)
 		
 	
->>>>>>> 32c0d22647c83570f6bd63679dd32267e66d8bae
 	
