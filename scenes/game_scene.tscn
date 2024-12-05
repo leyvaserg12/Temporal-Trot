@@ -1,10 +1,14 @@
-[gd_scene load_steps=31 format=4 uid="uid://bn8qadqldaxp5"]
+[gd_scene load_steps=35 format=4 uid="uid://bn8qadqldaxp5"]
 
 [ext_resource type="Script" path="res://scripts/game_scene.gd" id="1_ktwq3"]
+[ext_resource type="Texture2D" uid="uid://xrt1i11sbqfl" path="res://assets/textures/tileset/TileCraftGroundSetVersion2.png" id="3_5raix"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="4_is6ix"]
+[ext_resource type="AudioStream" uid="uid://daqutyigflj5v" path="res://assets/sound effects/jump fx.wav" id="4_qipc0"]
 [ext_resource type="SpriteFrames" uid="uid://cbuwm6nxgehj0" path="res://assets/animations/player_movement.tres" id="5_65crq"]
-[ext_resource type="PackedScene" path="res://scenes/fade_transition.tscn" id="5_a68w4"]
+[ext_resource type="PackedScene" uid="uid://bde3vdd56tkcq" path="res://scenes/fade_transition.tscn" id="5_a68w4"]
 [ext_resource type="Script" path="res://scripts/camera_2d.gd" id="5_n1d5g"]
+[ext_resource type="AudioStream" uid="uid://xtiidtqv0nic" path="res://assets/sound effects/death sound effect.mp3" id="5_v310f"]
+[ext_resource type="AudioStream" uid="uid://4wlkvxrbjfgf" path="res://assets/sound effects/teleport fx 2.wav" id="6_6o0oi"]
 [ext_resource type="Texture2D" uid="uid://d0ddmsobensri" path="res://assets/unused/terrain/city backgrounds/city 7/1.png" id="8_aepa1"]
 [ext_resource type="Texture2D" uid="uid://s2me4dt48qbk" path="res://assets/unused/terrain/city backgrounds/city 7/2.png" id="9_liifb"]
 [ext_resource type="Texture2D" uid="uid://b17x2owso6lds" path="res://assets/unused/terrain/city backgrounds/city 7/3.png" id="10_fux36"]
@@ -17,9 +21,9 @@
 [ext_resource type="Script" path="res://scripts/setpiece_class.gd" id="16_x7b7j"]
 [ext_resource type="Texture2D" uid="uid://i4d6cxg81omo" path="res://assets/unused/terrain/city backgrounds/city 6/5.png" id="17_bnsky"]
 [ext_resource type="PackedScene" uid="uid://dv5tqq7k1ru5" path="res://setpieces/john_set1.tscn" id="18_iyr05"]
-[ext_resource type="Texture2D" uid="uid://cyr5yfa1esfbt" path="res://assets/textures/tileset/tileset.png" id="18_oyb8q"]
 [ext_resource type="Script" path="res://scripts/teleport_flash.gd" id="19_oqp0x"]
-[ext_resource type="PackedScene" uid="uid://ci85iia4atwbh" path="res://scenes/hud.tscn" id="20_nbmj7"]
+[ext_resource type="AudioStream" uid="uid://8qyfj7kjds0k" path="res://assets/sound effects/temporal trot.wav" id="20_q1kb2"]
+[ext_resource type="PackedScene" uid="uid://ba1daqrwphrbj" path="res://setpieces/Buchi_set.tscn" id="23_tp6pe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5pil"]
 size = Vector2(5, 6)
@@ -69,8 +73,8 @@ _data = {
 "teleportFlash": SubResource("Animation_im665")
 }
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kumf1"]
-texture = ExtResource("18_oyb8q")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5fak1"]
+texture = ExtResource("3_5raix")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -237,10 +241,10 @@ texture = ExtResource("18_oyb8q")
 [sub_resource type="TileSet" id="TileSet_80gkd"]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
-sources/0 = SubResource("TileSetAtlasSource_kumf1")
+sources/0 = SubResource("TileSetAtlasSource_5fak1")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0jrk0"]
-texture = ExtResource("18_oyb8q")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lwh8o"]
+texture = ExtResource("3_5raix")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -406,7 +410,7 @@ texture = ExtResource("18_oyb8q")
 
 [sub_resource type="TileSet" id="TileSet_ghb1b"]
 physics_layer_0/collision_layer = 2
-sources/0 = SubResource("TileSetAtlasSource_0jrk0")
+sources/0 = SubResource("TileSetAtlasSource_lwh8o")
 
 [node name="GameScene" type="Node2D"]
 texture_filter = 1
@@ -431,6 +435,15 @@ sprite_frames = ExtResource("5_65crq")
 animation = &"playerTeleport"
 frame = 2
 frame_progress = 1.0
+
+[node name="jump-fx" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("4_qipc0")
+
+[node name="death-fx" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("5_v310f")
+
+[node name="tp-fx" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("6_6o0oi")
 
 [node name="FadeTransition" parent="." instance=ExtResource("5_a68w4")]
 metadata/_edit_use_anchors_ = true
@@ -527,6 +540,7 @@ centered = false
 
 [node name="FutureParallax" type="CanvasLayer" parent="."]
 layer = -1
+visible = false
 offset = Vector2(0, -360)
 transform = Transform2D(1, 0, 0, 1, 0, -360)
 follow_viewport_enabled = true
@@ -682,4 +696,10 @@ position = Vector2(640, 0)
 [node name="john_set1" parent="Template" instance=ExtResource("18_iyr05")]
 position = Vector2(0, -64)
 
-[node name="hud" parent="." instance=ExtResource("20_nbmj7")]
+[node name="Buchi_set2" parent="Template" instance=ExtResource("23_tp6pe")]
+position = Vector2(0, -65)
+
+[node name="Background_Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_q1kb2")
+volume_db = -8.432
+autoplay = true
