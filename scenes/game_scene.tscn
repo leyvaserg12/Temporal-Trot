@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://bn8qadqldaxp5"]
+[gd_scene load_steps=31 format=4 uid="uid://bn8qadqldaxp5"]
 
 [ext_resource type="Script" path="res://scripts/game_scene.gd" id="1_ktwq3"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="4_is6ix"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dv5tqq7k1ru5" path="res://setpieces/john_set1.tscn" id="18_iyr05"]
 [ext_resource type="Texture2D" uid="uid://cyr5yfa1esfbt" path="res://assets/textures/tileset/tileset.png" id="18_oyb8q"]
 [ext_resource type="Script" path="res://scripts/teleport_flash.gd" id="19_oqp0x"]
+[ext_resource type="PackedScene" uid="uid://ci85iia4atwbh" path="res://scenes/hud.tscn" id="20_nbmj7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5pil"]
 size = Vector2(5, 6)
@@ -680,3 +681,5 @@ position = Vector2(640, 0)
 
 [node name="john_set1" parent="Template" instance=ExtResource("18_iyr05")]
 position = Vector2(0, -64)
+
+[node name="hud" parent="." instance=ExtResource("20_nbmj7")]
