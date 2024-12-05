@@ -11,9 +11,14 @@ func _process(delta: float) -> void:
 	$background/AnimatedSprite2D.play("playerTeleport")
 
 
-func _on_replay_pressed() -> void:
+func _on_end_instructions_pressed() -> void:
+	$Label.visibile = not visible
+	$Instructions.visible = true
+
+
+func _on_restart_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/game_scene.tscn")
 
 
-func _on_end_instructions_pressed() -> void:
-	$Instructions.visible = true
+func _on_story_pressed() -> void:
+	get_tree().change_scene_to_packed(preload("res://scenes/story_scene.tscn"))

@@ -1,12 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://digulrvgch4o7"]
+[gd_scene load_steps=5 format=3 uid="uid://digulrvgch4o7"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_15jld"]
 [ext_resource type="SpriteFrames" uid="uid://cbuwm6nxgehj0" path="res://assets/animations/player_movement.tres" id="2_qamgn"]
-[ext_resource type="Texture2D" uid="uid://qefqxhcwjm63" path="res://assets/resources/UI/start_regular.png" id="6_k1bm5"]
+[ext_resource type="FontFile" uid="uid://boculbhjxk8hc" path="res://assets/textures/ui/fonts/Retro Gaming.ttf" id="3_0te5w"]
 [ext_resource type="PackedScene" uid="uid://g665dcekf2ol" path="res://scenes/instructions.tscn" id="7_5j21h"]
-[ext_resource type="Texture2D" uid="uid://h4ph81vycfnl" path="res://assets/resources/UI/start_hover.png" id="7_ly7o7"]
-[ext_resource type="Texture2D" uid="uid://dqg03nnu1te0n" path="res://assets/resources/UI/instructions_regular.png" id="8_gmxhe"]
-[ext_resource type="Texture2D" uid="uid://dxsybm4sudr42" path="res://assets/resources/UI/instructions_hover.png" id="9_u8r6b"]
 
 [node name="gameOver" type="CanvasLayer"]
 script = ExtResource("1_15jld")
@@ -17,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.10748, 0.10748, 0.10748, 1)
+color = Color(0.054902, 0, 0.239216, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="background"]
 texture_filter = 1
@@ -34,29 +31,76 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.286275)
 
-[node name="replay" type="TextureButton" parent="."]
-offset_left = 41.0
-offset_top = 645.0
-offset_right = 324.0
-offset_bottom = 691.0
-texture_normal = ExtResource("6_k1bm5")
-texture_hover = ExtResource("7_ly7o7")
-ignore_texture_size = true
-stretch_mode = 4
+[node name="restart" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0.576471)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_0te5w")
+theme_override_font_sizes/font_size = 75
 
-[node name="endInstructions" type="TextureButton" parent="."]
-offset_left = 678.0
-offset_top = 644.0
-offset_right = 1257.0
-offset_bottom = 700.0
-texture_normal = ExtResource("8_gmxhe")
-texture_pressed = ExtResource("8_gmxhe")
-texture_hover = ExtResource("9_u8r6b")
-ignore_texture_size = true
-stretch_mode = 4
+[node name="Label" type="Label" parent="."]
+offset_left = 34.0
+offset_top = 311.0
+offset_right = 1282.0
+offset_bottom = 407.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("3_0te5w")
+theme_override_font_sizes/font_size = 70
+text = "c l i c k  t o  p l a y  a g a i n"
+
+[node name="story" type="Label" parent="."]
+offset_left = 68.0
+offset_top = 635.0
+offset_right = 258.0
+offset_bottom = 699.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("3_0te5w")
+theme_override_font_sizes/font_size = 50
+text = "story"
+
+[node name="Button" type="Button" parent="story"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="endInstructions" type="Label" parent="."]
+offset_left = 851.0
+offset_top = 630.0
+offset_right = 1246.0
+offset_bottom = 694.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("3_0te5w")
+theme_override_font_sizes/font_size = 50
+text = "instructions"
+
+[node name="Button" type="Button" parent="endInstructions"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Instructions" parent="." instance=ExtResource("7_5j21h")]
 visible = false
 
-[connection signal="pressed" from="replay" to="." method="_on_replay_pressed"]
-[connection signal="pressed" from="endInstructions" to="." method="_on_end_instructions_pressed"]
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="story/Button" to="." method="_on_story_pressed"]
+[connection signal="pressed" from="endInstructions/Button" to="Instructions" method="_on_button_pressed"]

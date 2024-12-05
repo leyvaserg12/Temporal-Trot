@@ -8,3 +8,7 @@ func _process(_delta: float) -> void:
 	
 func _on_texture_button_pressed() -> void:
 	self.visible = not visible
+
+
+func _on_button_pressed() -> void:
+	self.visible = not visible
