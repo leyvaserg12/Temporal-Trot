@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://iptjvvc72mwm"]
+[gd_scene load_steps=8 format=3 uid="uid://iptjvvc72mwm"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_vqs3j"]
-[ext_resource type="PackedScene" uid="uid://bde3vdd56tkcq" path="res://scenes/fade_transition.tscn" id="2_mla76"]
 [ext_resource type="Texture2D" uid="uid://cx42xcgg3pkt7" path="res://assets/textures/ui/Game Cover Page.png" id="2_xxpqj"]
 [ext_resource type="Texture2D" uid="uid://qefqxhcwjm63" path="res://assets/textures/ui/start_regular.png" id="3_fuiea"]
 [ext_resource type="PackedScene" uid="uid://g665dcekf2ol" path="res://scenes/instructions.tscn" id="3_jdnlb"]
@@ -61,13 +60,7 @@ flat = true
 [node name="Instructions" parent="Menu" instance=ExtResource("3_jdnlb")]
 visible = false
 
-[node name="FadeTransition" parent="." instance=ExtResource("2_mla76")]
-visible = false
-
-[node name="Timer" type="Timer" parent="FadeTransition"]
-
 [connection signal="pressed" from="Menu/Background/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Menu/Background/Instructions" to="." method="_on_instructions_pressed"]
 [connection signal="toggled" from="Menu/Background/Instructions" to="." method="_on_instructions_toggled"]
 [connection signal="pressed" from="Menu/Background/Quit" to="." method="_on_quit_pressed"]
-[connection signal="timeout" from="FadeTransition/Timer" to="." method="_on_fade_timer_timeout"]
