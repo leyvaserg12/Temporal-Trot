@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=4 uid="uid://ba1daqrwphrbj"]
 
 [ext_resource type="Script" path="res://scripts/setpiece_class.gd" id="1_wy6v1"]
-[ext_resource type="Texture2D" uid="uid://cyr5yfa1esfbt" path="res://assets/textures/tileset/tileset.png" id="2_j80tk"]
+[ext_resource type="Texture2D" uid="uid://xrt1i11sbqfl" path="res://assets/textures/tileset/TileCraftGroundSetVersion2.png" id="2_w34iy"]
 [ext_resource type="Script" path="res://setpieces/prefabs/helicrane.gd" id="3_rgqu1"]
 [ext_resource type="Texture2D" uid="uid://bo5u4rmqiru1w" path="res://assets/textures/tileset/john_heli-1.png.png" id="4_uyrl7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5fak1"]
-texture = ExtResource("2_j80tk")
+texture = ExtResource("2_w34iy")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -176,7 +176,7 @@ physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_5fak1")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lwh8o"]
-texture = ExtResource("2_j80tk")
+texture = ExtResource("2_w34iy")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
