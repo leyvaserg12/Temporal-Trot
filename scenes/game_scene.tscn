@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://bn8qadqldaxp5"]
+[gd_scene load_steps=39 format=4 uid="uid://bn8qadqldaxp5"]
 
 [ext_resource type="Script" path="res://scripts/game_scene.gd" id="1_ktwq3"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="4_is6ix"]
@@ -24,6 +24,8 @@
 [ext_resource type="AudioStream" uid="uid://8qyfj7kjds0k" path="res://assets/sound effects/temporal trot.wav" id="20_q1kb2"]
 [ext_resource type="Texture2D" uid="uid://cyr5yfa1esfbt" path="res://assets/textures/tileset/tileset.png" id="21_vraa1"]
 [ext_resource type="PackedScene" uid="uid://ba1daqrwphrbj" path="res://setpieces/Buchi_set.tscn" id="23_tp6pe"]
+[ext_resource type="PackedScene" uid="uid://c7pucbily84l5" path="res://scenes/serg_set1.tscn" id="24_iaqfg"]
+[ext_resource type="PackedScene" uid="uid://c2fued4uka0oe" path="res://assets/animations/set2.tscn" id="24_v0x3k"]
 [ext_resource type="PackedScene" uid="uid://ci85iia4atwbh" path="res://scenes/hud.tscn" id="25_qdxrn"]
 [ext_resource type="PackedScene" uid="uid://digulrvgch4o7" path="res://scenes/game_over.tscn" id="26_oa0g0"]
 
@@ -680,14 +682,14 @@ End = NodePath("End")
 
 [node name="Terrain" type="TileMapLayer" parent="Template/Pit/Present"]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAEAAAABAAMAAAABAAEAAAABAAIAAAABAAEAAAABAAEAAAABAAEAAAACAAEAAAACAAEAAAACAAIAAAACAAEAAAACAAMAAAACAAEAAAAnAAAAAAABAAAAAAAmAAAAAAABAAAAAAAlAAAAAAAAAAAAAAAlAAEAAAAAAAEAAAAmAAEAAAABAAEAAAAnAAEAAAABAAEAAAAnAAIAAAABAAEAAAAmAAIAAAABAAEAAAAlAAIAAAAAAAEAAAAlAAMAAAAAAAEAAAAmAAMAAAABAAEAAAAnAAMAAAABAAEAAAACAAAAAAACAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAEAAAABAAMAAAABAAEAAAABAAIAAAABAAEAAAABAAEAAAABAAEAAAACAAEAAAACAAEAAAACAAIAAAACAAEAAAACAAMAAAACAAEAAAAnAAAAAAABAAAAAAAmAAAAAAAAAAAAAAAmAAEAAAAAAAEAAAAnAAEAAAABAAEAAAAnAAIAAAABAAEAAAAmAAIAAAAAAAEAAAAmAAMAAAAAAAEAAAAnAAMAAAABAAEAAAACAAAAAAACAAAAAAA=")
 tile_set = SubResource("TileSet_80gkd")
 
 [node name="Future" type="Node2D" parent="Template/Pit"]
 
 [node name="Terrain" type="TileMapLayer" parent="Template/Pit/Future"]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAAAAAAAEAAAAAAABAAAAAAAEAAAAAAACAAAAAAAFAAAAAAAAAAEAAAAEAAEAAAAAAAIAAAAEAAEAAAAAAAMAAAAEAAEAAAABAAMAAAAEAAEAAAABAAIAAAAEAAEAAAABAAEAAAAEAAEAAAAlAAAAAAADAAAAAAAmAAAAAAAEAAAAAAAnAAAAAAAEAAAAAAAlAAEAAAADAAEAAAAlAAIAAAADAAEAAAAlAAMAAAADAAEAAAAmAAEAAAAEAAEAAAAmAAIAAAAEAAEAAAAmAAMAAAAEAAEAAAAnAAEAAAAEAAEAAAAnAAIAAAAEAAEAAAAnAAMAAAAEAAEAAAACAAEAAAAFAAEAAAACAAIAAAAFAAEAAAACAAMAAAAFAAEAAAATAAAAAAADAAAAAAAUAAAAAAAEAAAAAAAVAAAAAAAEAAAAAAAWAAAAAAAFAAAAAAATAAEAAAADAAIAAAAUAAEAAAAEAAIAAAAVAAEAAAAEAAIAAAAWAAEAAAAFAAIAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAEAAAAAAABAAAAAAAEAAAAAAACAAAAAAAFAAAAAAAAAAEAAAAEAAEAAAAAAAIAAAAEAAEAAAAAAAMAAAAEAAEAAAABAAMAAAAEAAEAAAABAAIAAAAEAAEAAAABAAEAAAAEAAEAAAAmAAAAAAADAAAAAAAnAAAAAAAEAAAAAAAmAAEAAAADAAEAAAAmAAIAAAADAAEAAAAmAAMAAAADAAEAAAAnAAEAAAAEAAEAAAAnAAIAAAAEAAEAAAAnAAMAAAAEAAEAAAACAAEAAAAFAAEAAAACAAIAAAAFAAEAAAACAAMAAAAFAAEAAAATAAAAAAADAAAAAAAUAAAAAAAEAAAAAAAVAAAAAAAEAAAAAAAWAAAAAAAFAAAAAAATAAEAAAADAAIAAAAUAAEAAAAEAAIAAAAVAAEAAAAEAAIAAAAWAAEAAAAFAAIAAAA=")
 tile_set = SubResource("TileSet_ghb1b")
 
 [node name="Start" type="Node2D" parent="Template/Pit"]
@@ -700,6 +702,12 @@ position = Vector2(0, -64)
 
 [node name="Buchi_set2" parent="Template" instance=ExtResource("23_tp6pe")]
 position = Vector2(0, -65)
+
+[node name="serg_set2" parent="Template" instance=ExtResource("24_v0x3k")]
+position = Vector2(-1, -65)
+
+[node name="serg_set1" parent="Template" instance=ExtResource("24_iaqfg")]
+position = Vector2(-1, -65)
 
 [node name="Background_Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_q1kb2")

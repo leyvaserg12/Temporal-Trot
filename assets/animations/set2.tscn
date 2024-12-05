@@ -1,0 +1,957 @@
+[gd_scene load_steps=10 format=4 uid="uid://c2fued4uka0oe"]
+
+[ext_resource type="Script" path="res://scripts/setpiece_class.gd" id="1_xk324"]
+[ext_resource type="Texture2D" uid="uid://cyr5yfa1esfbt" path="res://assets/textures/tileset/tileset.png" id="2_c74d3"]
+[ext_resource type="SpriteFrames" uid="uid://kod0id26rmvi" path="res://assets/animations/future_animations.tres" id="4_gvgsk"]
+[ext_resource type="Script" path="res://assets/animations/groundbot.gd" id="5_j2m1y"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_er04e"]
+texture = ExtResource("2_c74d3")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:3/0 = 0
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:4/0 = 0
+8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.75, 8, -6.875, 8, 7, -8, 6.875)
+1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:5/0 = 0
+5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:5/0 = 0
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:5/0 = 0
+7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:5/0 = 0
+8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.75, 8, -6.875, 8, 7, -8, 6.875)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:6/0 = 0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:6/0 = 0
+5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:6/0 = 0
+6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:6/0 = 0
+7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:6/0 = 0
+8:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:7/0 = 0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:7/0 = 0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:7/0 = 0
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:7/0 = 0
+8:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:8/0 = 0
+0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:8/0 = 0
+1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:8/0 = 0
+2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:8/0 = 0
+3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:8/0 = 0
+4:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:8/0 = 0
+5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:8/0 = 0
+6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:8/0 = 0
+7:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:8/0 = 0
+8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_80gkd"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_er04e")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_luuk8"]
+texture = ExtResource("2_c74d3")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:3/0 = 0
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:4/0 = 0
+8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:5/0 = 0
+5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:5/0 = 0
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:5/0 = 0
+7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:5/0 = 0
+8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:6/0 = 0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:6/0 = 0
+5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:6/0 = 0
+6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:6/0 = 0
+7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:6/0 = 0
+8:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:7/0 = 0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:7/0 = 0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:7/0 = 0
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:7/0 = 0
+8:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:8/0 = 0
+0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:8/0 = 0
+1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:8/0 = 0
+2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:8/0 = 0
+3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:8/0 = 0
+4:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:8/0 = 0
+5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:8/0 = 0
+6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:8/0 = 0
+7:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:8/0 = 0
+8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_ghb1b"]
+physics_layer_0/collision_layer = 2
+sources/0 = SubResource("TileSetAtlasSource_luuk8")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gawl0"]
+radius = 7.97607
+height = 23.9282
+
+[node name="serg_set1" type="Node2D" node_paths=PackedStringArray("Present", "Future", "Start", "End")]
+texture_filter = 1
+script = ExtResource("1_xk324")
+Present = NodePath("Present")
+Future = NodePath("Future")
+Start = NodePath("Start")
+End = NodePath("End")
+
+[node name="Present" type="Node2D" parent="."]
+
+[node name="Terrain" type="TileMapLayer" parent="Present"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAEAAAABAAMAAAABAAEAAAABAAIAAAABAAEAAAABAAEAAAABAAEAAAACAAEAAAABAAEAAAADAAEAAAABAAEAAAADAAIAAAABAAEAAAACAAIAAAABAAEAAAACAAMAAAABAAEAAAADAAMAAAABAAEAAAAEAAMAAAABAAEAAAAEAAIAAAABAAEAAAAEAAEAAAABAAEAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAmAAAAAAABAAAAAAAmAAEAAAABAAEAAAAmAAIAAAABAAEAAAAmAAMAAAABAAEAAAAnAAAAAAABAAAAAAAnAAEAAAABAAEAAAAnAAIAAAABAAEAAAAnAAMAAAABAAEAAAAFAAEAAAABAAEAAAAFAAIAAAABAAEAAAAFAAMAAAABAAEAAAAGAAMAAAABAAEAAAAGAAIAAAABAAEAAAAGAAEAAAABAAEAAAAHAAEAAAABAAEAAAAHAAIAAAABAAEAAAAHAAMAAAABAAEAAAAIAAEAAAABAAEAAAAIAAIAAAABAAEAAAAIAAMAAAABAAEAAAAJAAAAAAABAAAAAAAJAAEAAAABAAEAAAAJAAIAAAABAAEAAAAJAAMAAAABAAEAAAAhAAAAAAABAAAAAAAhAAEAAAABAAEAAAAhAAIAAAABAAEAAAAhAAMAAAABAAEAAAAiAAAAAAABAAAAAAAiAAEAAAABAAEAAAAiAAIAAAABAAEAAAAiAAMAAAABAAEAAAAjAAAAAAABAAAAAAAjAAEAAAABAAEAAAAjAAIAAAABAAEAAAAjAAMAAAABAAEAAAAkAAAAAAABAAAAAAAkAAEAAAABAAEAAAAkAAIAAAABAAEAAAAkAAMAAAABAAEAAAAlAAAAAAABAAAAAAAlAAEAAAABAAEAAAAlAAIAAAABAAEAAAAlAAMAAAABAAEAAAATAAEAAAABAAAAAAAUAAEAAAABAAAAAAAVAAEAAAABAAAAAAAWAAEAAAABAAAAAAAXAAEAAAABAAAAAAASAAEAAAAAAAAAAAAYAAEAAAACAAAAAAAYAAIAAAACAAEAAAAYAAMAAAACAAEAAAASAAIAAAAAAAEAAAASAAMAAAAAAAEAAAATAAIAAAABAAEAAAAUAAIAAAABAAEAAAAVAAIAAAABAAEAAAAWAAIAAAABAAEAAAAXAAIAAAABAAEAAAATAAMAAAABAAEAAAAUAAMAAAABAAEAAAAVAAMAAAABAAEAAAAXAAMAAAABAAEAAAAWAAMAAAABAAEAAAAKAAAAAAABAAAAAAAKAAEAAAABAAEAAAAKAAIAAAABAAEAAAAKAAMAAAABAAEAAAALAAAAAAACAAAAAAALAAEAAAACAAEAAAALAAIAAAACAAEAAAALAAMAAAACAAEAAAAgAAAAAAAAAAAAAAAgAAEAAAAAAAEAAAAgAAIAAAAAAAEAAAAgAAMAAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_80gkd")
+
+[node name="Future" type="Node2D" parent="."]
+
+[node name="Terrain" type="TileMapLayer" parent="Future"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAAAAAAEAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAEAAAAAAAAAAEAAAAEAAEAAAAAAAIAAAAEAAEAAAAAAAMAAAAEAAEAAAABAAMAAAAEAAEAAAABAAIAAAAEAAEAAAABAAEAAAAEAAEAAAACAAEAAAAEAAEAAAACAAIAAAAEAAEAAAACAAMAAAAEAAEAAAADAAMAAAAEAAEAAAADAAIAAAAEAAEAAAADAAEAAAAEAAEAAAAEAAEAAAAEAAEAAAAEAAIAAAAEAAEAAAAEAAMAAAAEAAEAAAAFAAAAAAAEAAAAAAAFAAEAAAAEAAEAAAAGAAAAAAAEAAAAAAAGAAEAAAAEAAEAAAAHAAAAAAAEAAAAAAAHAAEAAAAEAAEAAAAIAAAAAAAEAAAAAAAIAAEAAAAEAAEAAAAJAAAAAAAEAAAAAAAJAAEAAAAEAAEAAAAKAAAAAAAEAAAAAAAKAAEAAAAEAAEAAAALAAAAAAAEAAAAAAALAAEAAAAEAAEAAAAMAAAAAAAEAAAAAAAMAAEAAAAEAAEAAAAFAAIAAAAEAAEAAAAGAAIAAAAEAAEAAAAHAAIAAAAEAAEAAAAIAAIAAAAEAAEAAAAJAAIAAAAEAAEAAAAKAAIAAAAEAAEAAAALAAIAAAAEAAEAAAAMAAIAAAAEAAEAAAAMAAMAAAAEAAEAAAALAAMAAAAEAAEAAAAKAAMAAAAEAAEAAAAJAAMAAAAEAAEAAAAIAAMAAAAEAAEAAAAHAAMAAAAEAAEAAAAGAAMAAAAEAAEAAAAFAAMAAAAEAAEAAAAmAAEAAAAEAAEAAAAmAAIAAAAEAAEAAAAmAAMAAAAEAAEAAAAnAAEAAAAEAAEAAAAnAAIAAAAEAAEAAAAnAAMAAAAEAAEAAAAmAAAAAAAEAAAAAAAnAAAAAAAEAAAAAAAbAAAAAAAEAAAAAAAbAAMAAAAEAAEAAAAbAAIAAAAEAAEAAAAbAAEAAAAEAAEAAAAcAAAAAAAEAAAAAAAcAAEAAAAEAAEAAAAcAAIAAAAEAAEAAAAcAAMAAAAEAAEAAAAdAAAAAAAEAAAAAAAdAAEAAAAEAAEAAAAdAAIAAAAEAAEAAAAdAAMAAAAEAAEAAAAeAAAAAAAEAAAAAAAeAAEAAAAEAAEAAAAeAAIAAAAEAAEAAAAeAAMAAAAEAAEAAAAfAAAAAAAEAAAAAAAfAAEAAAAEAAEAAAAfAAIAAAAEAAEAAAAfAAMAAAAEAAEAAAAgAAAAAAAEAAAAAAAgAAEAAAAEAAEAAAAgAAIAAAAEAAEAAAAgAAMAAAAEAAEAAAAhAAAAAAAEAAAAAAAhAAEAAAAEAAEAAAAhAAIAAAAEAAEAAAAhAAMAAAAEAAEAAAAiAAAAAAAEAAAAAAAiAAEAAAAEAAEAAAAiAAIAAAAEAAEAAAAiAAMAAAAEAAEAAAAjAAAAAAAEAAAAAAAjAAEAAAAEAAEAAAAjAAIAAAAEAAEAAAAjAAMAAAAEAAEAAAAkAAAAAAAEAAAAAAAkAAEAAAAEAAEAAAAkAAIAAAAEAAEAAAAkAAMAAAAEAAEAAAAlAAAAAAAEAAAAAAAlAAEAAAAEAAEAAAAlAAIAAAAEAAEAAAAlAAMAAAAEAAEAAAANAAAAAAAEAAAAAAANAAEAAAAEAAEAAAANAAIAAAAEAAEAAAANAAMAAAAEAAEAAAAOAAAAAAAEAAAAAAAOAAEAAAAEAAEAAAAOAAIAAAAEAAEAAAAOAAMAAAAEAAEAAAAPAAAAAAAEAAAAAAAPAAEAAAAEAAEAAAAPAAIAAAAEAAEAAAAPAAMAAAAEAAEAAAAQAAAAAAAEAAAAAAAQAAEAAAAEAAEAAAAQAAIAAAAEAAEAAAAQAAMAAAAEAAEAAAARAAAAAAAEAAAAAAARAAEAAAAEAAEAAAARAAIAAAAEAAEAAAARAAMAAAAEAAEAAAASAAAAAAAEAAAAAAASAAEAAAAEAAEAAAASAAIAAAAEAAEAAAASAAMAAAAEAAEAAAATAAAAAAAEAAAAAAATAAEAAAAEAAEAAAATAAIAAAAEAAEAAAATAAMAAAAEAAEAAAAUAAAAAAAEAAAAAAAUAAEAAAAEAAEAAAAUAAIAAAAEAAEAAAAUAAMAAAAEAAEAAAAVAAAAAAAEAAAAAAAVAAEAAAAEAAEAAAAVAAIAAAAEAAEAAAAVAAMAAAAEAAEAAAAWAAAAAAAEAAAAAAAWAAEAAAAEAAEAAAAWAAIAAAAEAAEAAAAWAAMAAAAEAAEAAAAXAAAAAAAEAAAAAAAXAAEAAAAEAAEAAAAXAAIAAAAEAAEAAAAXAAMAAAAEAAEAAAAYAAAAAAAEAAAAAAAYAAEAAAAEAAEAAAAYAAIAAAAEAAEAAAAYAAMAAAAEAAEAAAAZAAAAAAAEAAAAAAAZAAEAAAAEAAEAAAAZAAIAAAAEAAEAAAAZAAMAAAAEAAEAAAAaAAAAAAAEAAAAAAAaAAEAAAAEAAEAAAAaAAIAAAAEAAEAAAAaAAMAAAAEAAEAAAA=")
+tile_set = SubResource("TileSet_ghb1b")
+
+[node name="groundbot" type="Area2D" parent="Future"]
+position = Vector2(114, -38)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot"]
+position = Vector2(68, -16)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot"]
+position = Vector2(69, -14)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot2" type="Area2D" parent="Future"]
+position = Vector2(137, -39)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot2"]
+position = Vector2(69.5645, -14.949)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot2"]
+position = Vector2(70.5645, -12.949)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot3" type="Area2D" parent="Future"]
+position = Vector2(161, -39)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot3"]
+position = Vector2(68, -16)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot3"]
+position = Vector2(69, -14)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot4" type="Area2D" parent="Future"]
+position = Vector2(184, -40)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot4"]
+position = Vector2(69.5645, -14.949)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot4"]
+position = Vector2(70.5645, -12.949)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot5" type="Area2D" parent="Future"]
+position = Vector2(207, -39)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot5"]
+position = Vector2(68, -16)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot5"]
+position = Vector2(69, -14)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot6" type="Area2D" parent="Future"]
+position = Vector2(230, -40)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot6"]
+position = Vector2(69.5645, -14.949)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot6"]
+position = Vector2(70.5645, -12.949)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot7" type="Area2D" parent="Future"]
+position = Vector2(254, -40)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot7"]
+position = Vector2(68, -16)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot7"]
+position = Vector2(69, -14)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot8" type="Area2D" parent="Future"]
+position = Vector2(277, -41)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot8"]
+position = Vector2(69.5645, -14.949)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot8"]
+position = Vector2(70.5645, -12.949)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot9" type="Area2D" parent="Future"]
+position = Vector2(115, -3)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot9"]
+position = Vector2(68, -16)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot9"]
+position = Vector2(69, -14)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot10" type="Area2D" parent="Future"]
+position = Vector2(138, -4)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot10"]
+position = Vector2(69.5645, -14.949)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot10"]
+position = Vector2(70.5645, -12.949)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot11" type="Area2D" parent="Future"]
+position = Vector2(162, -4)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot11"]
+position = Vector2(68, -16)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot11"]
+position = Vector2(69, -14)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot12" type="Area2D" parent="Future"]
+position = Vector2(185, -5)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot12"]
+position = Vector2(69.5645, -14.949)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot12"]
+position = Vector2(70.5645, -12.949)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot13" type="Area2D" parent="Future"]
+position = Vector2(208, -4)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot13"]
+position = Vector2(68, -16)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot13"]
+position = Vector2(69, -14)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot14" type="Area2D" parent="Future"]
+position = Vector2(231, -5)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot14"]
+position = Vector2(69.5645, -14.949)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot14"]
+position = Vector2(70.5645, -12.949)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot15" type="Area2D" parent="Future"]
+position = Vector2(255, -5)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot15"]
+position = Vector2(68, -16)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+frame_progress = 0.635727
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot15"]
+position = Vector2(69, -14)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot16" type="Area2D" parent="Future"]
+position = Vector2(278, -6)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot16"]
+position = Vector2(69.5645, -14.949)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+frame_progress = 0.153892
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot16"]
+position = Vector2(70.5645, -12.949)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot17" type="Area2D" parent="Future"]
+position = Vector2(303, -39)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot17"]
+position = Vector2(68, -16)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot17"]
+position = Vector2(69, -14)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot18" type="Area2D" parent="Future"]
+position = Vector2(326, -40)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot18"]
+position = Vector2(69.5645, -14.949)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot18"]
+position = Vector2(70.5645, -12.949)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot19" type="Area2D" parent="Future"]
+position = Vector2(350, -40)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot19"]
+position = Vector2(68, -16)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot19"]
+position = Vector2(69, -14)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot20" type="Area2D" parent="Future"]
+position = Vector2(373, -41)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot20"]
+position = Vector2(69.5645, -14.949)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot20"]
+position = Vector2(70.5645, -12.949)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot21" type="Area2D" parent="Future"]
+position = Vector2(396, -40)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot21"]
+position = Vector2(68, -16)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot21"]
+position = Vector2(69, -14)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot22" type="Area2D" parent="Future"]
+position = Vector2(419, -41)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot22"]
+position = Vector2(69.5645, -14.949)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot22"]
+position = Vector2(70.5645, -12.949)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot23" type="Area2D" parent="Future"]
+position = Vector2(443, -41)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot23"]
+position = Vector2(68, -16)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot23"]
+position = Vector2(69, -14)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot24" type="Area2D" parent="Future"]
+position = Vector2(466, -42)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot24"]
+position = Vector2(69.5645, -14.949)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot24"]
+position = Vector2(70.5645, -12.949)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot25" type="Area2D" parent="Future"]
+position = Vector2(304, -4)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot25"]
+position = Vector2(68, -16)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot25"]
+position = Vector2(69, -14)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot26" type="Area2D" parent="Future"]
+position = Vector2(327, -5)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot26"]
+position = Vector2(69.5645, -14.949)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot26"]
+position = Vector2(70.5645, -12.949)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot27" type="Area2D" parent="Future"]
+position = Vector2(351, -5)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot27"]
+position = Vector2(68, -16)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot27"]
+position = Vector2(69, -14)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot28" type="Area2D" parent="Future"]
+position = Vector2(374, -6)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot28"]
+position = Vector2(69.5645, -14.949)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot28"]
+position = Vector2(70.5645, -12.949)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot29" type="Area2D" parent="Future"]
+position = Vector2(397, -5)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot29"]
+position = Vector2(68, -16)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot29"]
+position = Vector2(69, -14)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot30" type="Area2D" parent="Future"]
+position = Vector2(420, -6)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot30"]
+position = Vector2(69.5645, -14.949)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot30"]
+position = Vector2(70.5645, -12.949)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot31" type="Area2D" parent="Future"]
+position = Vector2(444, -6)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot31"]
+position = Vector2(68, -16)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+frame_progress = 0.951119
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot31"]
+position = Vector2(69, -14)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="groundbot32" type="Area2D" parent="Future"]
+position = Vector2(467, -7)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("5_j2m1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/groundbot32"]
+position = Vector2(69.5645, -14.949)
+scale = Vector2(1.003, 1.003)
+sprite_frames = ExtResource("4_gvgsk")
+animation = &"groundBot"
+frame_progress = 0.469284
+
+[node name="Collision" type="CollisionShape2D" parent="Future/groundbot32"]
+position = Vector2(70.5645, -12.949)
+scale = Vector2(1.003, 1.003)
+shape = SubResource("CapsuleShape2D_gawl0")
+
+[node name="Start" type="Node2D" parent="."]
+
+[node name="End" type="Node2D" parent="."]
+position = Vector2(640, -1)
+
+[connection signal="body_entered" from="Future/groundbot" to="Future/groundbot" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot2" to="Future/groundbot2" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot3" to="Future/groundbot3" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot4" to="Future/groundbot4" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot5" to="Future/groundbot5" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot6" to="Future/groundbot6" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot7" to="Future/groundbot7" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot8" to="Future/groundbot8" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot9" to="Future/groundbot9" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot10" to="Future/groundbot10" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot11" to="Future/groundbot11" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot12" to="Future/groundbot12" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot13" to="Future/groundbot13" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot14" to="Future/groundbot14" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot15" to="Future/groundbot15" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot16" to="Future/groundbot16" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot17" to="Future/groundbot17" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot18" to="Future/groundbot18" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot19" to="Future/groundbot19" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot20" to="Future/groundbot20" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot21" to="Future/groundbot21" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot22" to="Future/groundbot22" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot23" to="Future/groundbot23" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot24" to="Future/groundbot24" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot25" to="Future/groundbot25" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot26" to="Future/groundbot26" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot27" to="Future/groundbot27" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot28" to="Future/groundbot28" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot29" to="Future/groundbot29" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot30" to="Future/groundbot30" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot31" to="Future/groundbot31" method="_on_body_entered"]
+[connection signal="body_entered" from="Future/groundbot32" to="Future/groundbot32" method="_on_body_entered"]

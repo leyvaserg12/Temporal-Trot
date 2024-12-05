@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/setpiece_class.gd" id="1_wy6v1"]
 [ext_resource type="Texture2D" uid="uid://cyr5yfa1esfbt" path="res://assets/textures/tileset/tileset.png" id="2_j80tk"]
-[ext_resource type="Script" path="res://setpieces/prefabs/helicrane.gd" id="3_rgqu1"]
-[ext_resource type="Texture2D" uid="uid://bo5u4rmqiru1w" path="res://assets/textures/tileset/john_heli-1.png.png" id="4_uyrl7"]
+[ext_resource type="Script" path="res://scripts/helicrane_2.gd" id="3_p8s7t"]
+[ext_resource type="SpriteFrames" uid="uid://kod0id26rmvi" path="res://assets/animations/future_animations.tres" id="4_5shci"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5fak1"]
 texture = ExtResource("2_j80tk")
@@ -373,32 +373,34 @@ tile_set = SubResource("TileSet_ghb1b")
 [node name="helicrane" type="Area2D" parent="Future"]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("3_rgqu1")
+script = ExtResource("3_p8s7t")
 
 [node name="Collision" type="CollisionShape2D" parent="Future/helicrane"]
 position = Vector2(87, -22)
 scale = Vector2(0.148, 0.148)
 shape = SubResource("CapsuleShape2D_gawl0")
 
-[node name="Sprite2D" type="Sprite2D" parent="Future/helicrane"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/helicrane"]
 position = Vector2(87, -17)
 scale = Vector2(0.645833, 0.645833)
-texture = ExtResource("4_uyrl7")
+sprite_frames = ExtResource("4_5shci")
+animation = &"flying3_idle"
 
 [node name="helicrane2" type="Area2D" parent="Future"]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("3_rgqu1")
+script = ExtResource("3_p8s7t")
 
 [node name="Collision" type="CollisionShape2D" parent="Future/helicrane2"]
 position = Vector2(408, -95)
 scale = Vector2(0.148, 0.148)
 shape = SubResource("CapsuleShape2D_gawl0")
 
-[node name="Sprite2D" type="Sprite2D" parent="Future/helicrane2"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Future/helicrane2"]
 position = Vector2(408, -90)
 scale = Vector2(0.645833, 0.645833)
-texture = ExtResource("4_uyrl7")
+sprite_frames = ExtResource("4_5shci")
+animation = &"flying3_idle"
 
 [node name="Start" type="Node2D" parent="."]
 
