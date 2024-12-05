@@ -364,6 +364,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAA
 tile_set = SubResource("TileSet_80gkd")
 
 [node name="Future" type="Node2D" parent="."]
+visible = false
 
 [node name="Terrain" type="TileMapLayer" parent="Future"]
 use_parent_material = true
