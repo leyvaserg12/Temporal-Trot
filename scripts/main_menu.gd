@@ -10,7 +10,7 @@ func _on_start_pressed() -> void:
 	#$FadeTransition.show()
 	#$FadeTransition/fade_timer.start()
 	#$FadeTransition/AnimationPlayer.play("fade_in")
-	get_tree().change_scene_to_file("res://scenes/game_scene.tscn")
+	get_tree().change_scene_to_file("res://scenes/story_scene.tscn")
 
 func _on_instructions_pressed() -> void:
 	$Menu/Instructions.visible = true
