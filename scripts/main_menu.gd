@@ -1,4 +1,6 @@
 extends Node2D
+@onready var menue_music: AudioStreamPlayer = $menue_music
+
 
 #func _ready() -> void:
 #	$FadeTransition/AnimationPlayer.play("RESET")
@@ -10,7 +12,7 @@ func _on_start_pressed() -> void:
 	#$FadeTransition.show()
 	#$FadeTransition/fade_timer.start()
 	#$FadeTransition/AnimationPlayer.play("fade_in")
-	get_tree().change_scene_to_file("res://scenes/story_scene.tscn")
+	get_tree().change_scene_to_file("res://scenes/game_scene.tscn")
 
 func _on_instructions_pressed() -> void:
 	$Menu/Instructions.visible = true
