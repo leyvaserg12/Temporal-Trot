@@ -624,7 +624,6 @@ position = Vector2(640, 0)
 position = Vector2(0, 360)
 
 [node name="Starter" type="Node2D" parent="Template" node_paths=PackedStringArray("Present", "Future", "Start", "End")]
-visible = false
 texture_filter = 1
 position = Vector2(0, -64)
 script = ExtResource("16_x7b7j")
