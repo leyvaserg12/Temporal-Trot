@@ -1,7 +1,6 @@
 [gd_scene load_steps=30 format=4 uid="uid://bn8qadqldaxp5"]
 
 [ext_resource type="Script" path="res://scripts/game_scene.gd" id="1_ktwq3"]
-[ext_resource type="Texture2D" uid="uid://xrt1i11sbqfl" path="res://assets/textures/tileset/TileCraftGroundSetVersion2.png" id="3_5raix"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="4_is6ix"]
 [ext_resource type="SpriteFrames" uid="uid://cbuwm6nxgehj0" path="res://assets/animations/player_movement.tres" id="5_65crq"]
 [ext_resource type="PackedScene" uid="uid://bde3vdd56tkcq" path="res://scenes/fade_transition.tscn" id="5_a68w4"]
@@ -18,6 +17,7 @@
 [ext_resource type="Script" path="res://scripts/setpiece_class.gd" id="16_x7b7j"]
 [ext_resource type="Texture2D" uid="uid://i4d6cxg81omo" path="res://assets/unused/terrain/city backgrounds/city 6/5.png" id="17_bnsky"]
 [ext_resource type="PackedScene" uid="uid://dv5tqq7k1ru5" path="res://setpieces/john_set1.tscn" id="18_iyr05"]
+[ext_resource type="Texture2D" uid="uid://cyr5yfa1esfbt" path="res://assets/textures/tileset/tileset.png" id="18_oyb8q"]
 [ext_resource type="Script" path="res://scripts/teleport_flash.gd" id="19_oqp0x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5pil"]
@@ -68,8 +68,8 @@ _data = {
 "teleportFlash": SubResource("Animation_im665")
 }
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5fak1"]
-texture = ExtResource("3_5raix")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kumf1"]
+texture = ExtResource("18_oyb8q")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -236,10 +236,10 @@ texture = ExtResource("3_5raix")
 [sub_resource type="TileSet" id="TileSet_80gkd"]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
-sources/0 = SubResource("TileSetAtlasSource_5fak1")
+sources/0 = SubResource("TileSetAtlasSource_kumf1")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lwh8o"]
-texture = ExtResource("3_5raix")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0jrk0"]
+texture = ExtResource("18_oyb8q")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -405,7 +405,7 @@ texture = ExtResource("3_5raix")
 
 [sub_resource type="TileSet" id="TileSet_ghb1b"]
 physics_layer_0/collision_layer = 2
-sources/0 = SubResource("TileSetAtlasSource_lwh8o")
+sources/0 = SubResource("TileSetAtlasSource_0jrk0")
 
 [node name="GameScene" type="Node2D"]
 texture_filter = 1
@@ -624,6 +624,7 @@ position = Vector2(640, 0)
 position = Vector2(0, 360)
 
 [node name="Starter" type="Node2D" parent="Template" node_paths=PackedStringArray("Present", "Future", "Start", "End")]
+visible = false
 texture_filter = 1
 position = Vector2(0, -64)
 script = ExtResource("16_x7b7j")
