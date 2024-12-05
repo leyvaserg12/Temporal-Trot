@@ -1,4 +1,6 @@
 extends Node2D
+@onready var menue_music: AudioStreamPlayer = $menue_music
+
 
 #func _ready() -> void:
 #	$FadeTransition/AnimationPlayer.play("RESET")
