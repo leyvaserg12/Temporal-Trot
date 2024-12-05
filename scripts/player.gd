@@ -9,9 +9,6 @@ extends CharacterBody2D
 @onready var window_size: Vector2 = viewport.get_visible_rect().size
 
 @onready var anim: AnimatedSprite2D = $Sprite
-@onready var jump_fx: AudioStreamPlayer = $"jump-fx"
-@onready var tp_fx: AudioStreamPlayer = $"tp-fx"
-@onready var death_fx: AudioStreamPlayer = $"death-fx"
 
 @onready var teleporting = false
 
@@ -36,6 +33,7 @@ func _process(_delta: float) -> void:
 			teleporting = false
 		
 
+#sound effects
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -44,12 +42,10 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("mv_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		jump_fx.play()
 		
 	# Handle Teleport Animation
 	if Input.is_action_just_pressed("mv_tele"):
 		_handle_teleport()
-		tp_fx.play()
 	
 	# Move the dude.
 	var direction := Input.get_axis("mv_left", "mv_right")

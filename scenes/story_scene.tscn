@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfdloau2weldq"]
+
+[ext_resource type="Script" path="res://story_scene.gd" id="1_qwoac"]
+[ext_resource type="Texture2D" uid="uid://bcqkwf4yw0i3" path="res://assets/textures/ui/story_scenes/scene1.png" id="2_7sr0y"]
+[ext_resource type="FontFile" uid="uid://boculbhjxk8hc" path="res://assets/textures/ui/fonts/Retro Gaming.ttf" id="3_kqyav"]
+
+[node name="storyScenes" type="Node2D"]
+script = ExtResource("1_qwoac")
+
+[node name="scenes" type="CanvasLayer" parent="."]
+
+[node name="currentScene" type="TextureRect" parent="scenes"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7sr0y")
+expand_mode = 3
+
+[node name="label" type="Label" parent="scenes"]
+offset_left = 1041.0
+offset_top = 642.0
+offset_right = 1258.0
+offset_bottom = 700.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("3_kqyav")
+theme_override_font_sizes/font_size = 45
+text = "space >"
