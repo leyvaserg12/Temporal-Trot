@@ -142,32 +142,13 @@ animations = [{
 "speed": 8.0
 }, {
 "frames": [{
-<<<<<<< HEAD
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8rgt1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_chs3t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_57url")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ov0bq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dphst")
-}, {
-"duration": 1.0,
-=======
 "duration": 2.0,
->>>>>>> 32c0d22647c83570f6bd63679dd32267e66d8bae
 "texture": SubResource("AtlasTexture_cyee5")
 }, {
-"duration": 1.0,
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_yly55")
 }, {
-"duration": 1.0,
+"duration": 5.0,
 "texture": SubResource("AtlasTexture_36lyb")
 }],
 "loop": false,
