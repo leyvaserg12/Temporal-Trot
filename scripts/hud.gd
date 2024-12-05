@@ -22,5 +22,5 @@ func _process(delta: float) -> void:
 
 # stop keeping score when player dies
 func _on_game_scene_player_died() -> void:
-	endGame = false
+	endGame = true
 	
