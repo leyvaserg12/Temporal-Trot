@@ -1,10 +1,13 @@
-[gd_scene load_steps=30 format=4 uid="uid://bn8qadqldaxp5"]
+[gd_scene load_steps=35 format=4 uid="uid://bn8qadqldaxp5"]
 
 [ext_resource type="Script" path="res://scripts/game_scene.gd" id="1_ktwq3"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="4_is6ix"]
+[ext_resource type="AudioStream" uid="uid://daqutyigflj5v" path="res://assets/sound effects/jump fx.wav" id="4_qipc0"]
 [ext_resource type="SpriteFrames" uid="uid://cbuwm6nxgehj0" path="res://assets/animations/player_movement.tres" id="5_65crq"]
 [ext_resource type="PackedScene" uid="uid://bde3vdd56tkcq" path="res://scenes/fade_transition.tscn" id="5_a68w4"]
 [ext_resource type="Script" path="res://scripts/camera_2d.gd" id="5_n1d5g"]
+[ext_resource type="AudioStream" uid="uid://xtiidtqv0nic" path="res://assets/sound effects/death sound effect.mp3" id="5_v310f"]
+[ext_resource type="AudioStream" uid="uid://4wlkvxrbjfgf" path="res://assets/sound effects/teleport fx 2.wav" id="6_6o0oi"]
 [ext_resource type="Texture2D" uid="uid://d0ddmsobensri" path="res://assets/unused/terrain/city backgrounds/city 7/1.png" id="8_aepa1"]
 [ext_resource type="Texture2D" uid="uid://s2me4dt48qbk" path="res://assets/unused/terrain/city backgrounds/city 7/2.png" id="9_liifb"]
 [ext_resource type="Texture2D" uid="uid://b17x2owso6lds" path="res://assets/unused/terrain/city backgrounds/city 7/3.png" id="10_fux36"]
@@ -19,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://dv5tqq7k1ru5" path="res://setpieces/john_set1.tscn" id="18_iyr05"]
 [ext_resource type="Texture2D" uid="uid://cyr5yfa1esfbt" path="res://assets/textures/tileset/tileset.png" id="18_oyb8q"]
 [ext_resource type="Script" path="res://scripts/teleport_flash.gd" id="19_oqp0x"]
+[ext_resource type="AudioStream" uid="uid://8qyfj7kjds0k" path="res://assets/sound effects/temporal trot.wav" id="20_q1kb2"]
+[ext_resource type="PackedScene" uid="uid://ba1daqrwphrbj" path="res://setpieces/Buchi_set.tscn" id="23_tp6pe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5pil"]
 size = Vector2(5, 6)
@@ -431,6 +436,15 @@ animation = &"playerTeleport"
 frame = 2
 frame_progress = 1.0
 
+[node name="jump-fx" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("4_qipc0")
+
+[node name="death-fx" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("5_v310f")
+
+[node name="tp-fx" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("6_6o0oi")
+
 [node name="FadeTransition" parent="." instance=ExtResource("5_a68w4")]
 metadata/_edit_use_anchors_ = true
 
@@ -682,3 +696,11 @@ position = Vector2(640, 0)
 
 [node name="john_set1" parent="Template" instance=ExtResource("18_iyr05")]
 position = Vector2(0, -64)
+
+[node name="Buchi_set2" parent="Template" instance=ExtResource("23_tp6pe")]
+position = Vector2(0, -65)
+
+[node name="Background_Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_q1kb2")
+volume_db = -8.432
+autoplay = true
