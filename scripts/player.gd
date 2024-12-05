@@ -33,6 +33,7 @@ func _process(_delta: float) -> void:
 			teleporting = false
 		
 
+#sound effects
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
