@@ -1,9 +1,12 @@
 extends Node2D
 
+@onready var transition = $Transition
+
 var sceneNumber = 1
 var currentScene = "res://assets/textures/ui/story_scenes/scene1.png"
 
 func _ready() -> void:
+	transition.play("fade_in")
 	pass # Replace with function body.
 
 
