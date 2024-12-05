@@ -17,5 +17,8 @@ func _process(delta: float) -> void:
 
 func _on_texture_button_pressed() -> void:
 	self.visible = not visible
-	pass # Replace with function body.
 	
+
+
+func _on_exit_pressed() -> void:
+	self.visible = not visible

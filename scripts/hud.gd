@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 	# increase the score by 1 while the current run is not finished
 	if !endGame:
 		currentScore += 1
-		$outline/currentScore.text = "SCORE: " + str(currentScore)
+		$currentScore.text = "SCORE: " + str(currentScore)
 	pass
 
 # stop keeping score when player dies

@@ -720,9 +720,9 @@ stream = ExtResource("20_q1kb2")
 volume_db = -8.432
 autoplay = true
 
-[node name="hud" parent="." instance=ExtResource("25_qdxrn")]
-
 [node name="gameOver" parent="." instance=ExtResource("26_oa0g0")]
 visible = false
+
+[node name="hud" parent="." instance=ExtResource("25_qdxrn")]
 
 [connection signal="player_died" from="." to="hud" method="_on_game_scene_player_died"]
