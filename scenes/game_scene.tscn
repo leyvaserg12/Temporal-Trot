@@ -485,89 +485,104 @@ offset = Vector2(0, -360)
 transform = Transform2D(1, 0, 0, 1, 0, -360)
 follow_viewport_enabled = true
 
-[node name="Layer5" type="Parallax2D" parent="PresentParallax"]
+[node name="ColorRect" type="ColorRect" parent="PresentParallax"]
+color = Color(1, 1, 1, 0)
+
+[node name="Layer5" type="Parallax2D" parent="PresentParallax/ColorRect"]
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
 scroll_scale = Vector2(0.175, 1)
-scroll_offset = Vector2(0, 2)
+scroll_offset = Vector2(0, 58)
 repeat_size = Vector2(1280, 0)
 repeat_times = 4
 
-[node name="Background" type="Sprite2D" parent="PresentParallax/Layer5"]
+[node name="Background" type="Sprite2D" parent="PresentParallax/ColorRect/Layer5"]
+position = Vector2(0, -126)
+scale = Vector2(2.22222, 2.24691)
 texture = ExtResource("8_aepa1")
 centered = false
 
-[node name="Layer4" type="Parallax2D" parent="PresentParallax"]
+[node name="Layer4" type="Parallax2D" parent="PresentParallax/ColorRect"]
 z_index = 1
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
 scroll_scale = Vector2(0.25, 1)
-scroll_offset = Vector2(0, 2)
+scroll_offset = Vector2(0, 58)
 repeat_size = Vector2(1280, 0)
 repeat_times = 4
 
-[node name="Background" type="Sprite2D" parent="PresentParallax/Layer4"]
+[node name="Background" type="Sprite2D" parent="PresentParallax/ColorRect/Layer4"]
+position = Vector2(0, -128)
+scale = Vector2(2.22569, 2.25309)
 texture = ExtResource("9_liifb")
 centered = false
 
-[node name="Layer3" type="Parallax2D" parent="PresentParallax"]
+[node name="Layer3" type="Parallax2D" parent="PresentParallax/ColorRect"]
 z_index = 2
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
 scroll_scale = Vector2(0.325, 1)
-scroll_offset = Vector2(0, 2)
+scroll_offset = Vector2(0, 58)
 repeat_size = Vector2(1280, 0)
 repeat_times = 4
 
-[node name="Background" type="Sprite2D" parent="PresentParallax/Layer3"]
+[node name="Background" type="Sprite2D" parent="PresentParallax/ColorRect/Layer3"]
+position = Vector2(0, -124)
+scale = Vector2(2.22917, 2.2716)
 texture = ExtResource("10_fux36")
 centered = false
 
-[node name="Layer2" type="Parallax2D" parent="PresentParallax"]
+[node name="Layer2" type="Parallax2D" parent="PresentParallax/ColorRect"]
 z_index = 3
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
 scroll_scale = Vector2(0.35, 1)
-scroll_offset = Vector2(0, 2)
+scroll_offset = Vector2(0, 58)
 repeat_size = Vector2(1280, 0)
 repeat_times = 4
 
-[node name="Background" type="Sprite2D" parent="PresentParallax/Layer2"]
+[node name="Background" type="Sprite2D" parent="PresentParallax/ColorRect/Layer2"]
+scale = Vector2(2.22222, 1.83333)
 texture = ExtResource("11_b5qsx")
 centered = false
 
-[node name="Layer1" type="Parallax2D" parent="PresentParallax"]
+[node name="Layer1" type="Parallax2D" parent="PresentParallax/ColorRect"]
 z_index = 4
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
 scroll_scale = Vector2(0.425, 1)
-scroll_offset = Vector2(0, 2)
+scroll_offset = Vector2(2, 18)
 repeat_size = Vector2(1280, 0)
 repeat_times = 4
 
-[node name="Background" type="Sprite2D" parent="PresentParallax/Layer1"]
+[node name="Background" type="Sprite2D" parent="PresentParallax/ColorRect/Layer1"]
+position = Vector2(0, -126)
+scale = Vector2(2.22222, 2.25309)
 texture = ExtResource("12_ctqsc")
 centered = false
 
 [node name="FutureParallax" type="CanvasLayer" parent="."]
 layer = -1
-visible = false
 offset = Vector2(0, -360)
 transform = Transform2D(1, 0, 0, 1, 0, -360)
 follow_viewport_enabled = true
 
-[node name="Layer5" type="Parallax2D" parent="FutureParallax"]
+[node name="ColorRect" type="ColorRect" parent="FutureParallax"]
+color = Color(1, 1, 1, 0)
+
+[node name="Layer5" type="Parallax2D" parent="FutureParallax/ColorRect"]
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
 scroll_scale = Vector2(0.175, 1)
 repeat_size = Vector2(1280, 0)
 repeat_times = 4
 
-[node name="Background" type="Sprite2D" parent="FutureParallax/Layer5"]
+[node name="Background" type="Sprite2D" parent="FutureParallax/ColorRect/Layer5"]
+scale = Vector2(2.22222, 2.21605)
 texture = ExtResource("13_lauie")
 centered = false
 
-[node name="Layer4" type="Parallax2D" parent="FutureParallax"]
+[node name="Layer4" type="Parallax2D" parent="FutureParallax/ColorRect"]
 z_index = 1
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
@@ -575,11 +590,12 @@ scroll_scale = Vector2(0.25, 1)
 repeat_size = Vector2(1280, 0)
 repeat_times = 4
 
-[node name="Background" type="Sprite2D" parent="FutureParallax/Layer4"]
+[node name="Background" type="Sprite2D" parent="FutureParallax/ColorRect/Layer4"]
+scale = Vector2(2.22917, 2.22222)
 texture = ExtResource("14_dydh3")
 centered = false
 
-[node name="Layer3" type="Parallax2D" parent="FutureParallax"]
+[node name="Layer3" type="Parallax2D" parent="FutureParallax/ColorRect"]
 z_index = 2
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
@@ -587,11 +603,12 @@ scroll_scale = Vector2(0.325, 1)
 repeat_size = Vector2(1280, 0)
 repeat_times = 4
 
-[node name="Background" type="Sprite2D" parent="FutureParallax/Layer3"]
+[node name="Background" type="Sprite2D" parent="FutureParallax/ColorRect/Layer3"]
+scale = Vector2(2.22222, 2.22222)
 texture = ExtResource("15_14bvg")
 centered = false
 
-[node name="Layer2" type="Parallax2D" parent="FutureParallax"]
+[node name="Layer2" type="Parallax2D" parent="FutureParallax/ColorRect"]
 z_index = 3
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
@@ -599,11 +616,12 @@ scroll_scale = Vector2(0.35, 1)
 repeat_size = Vector2(1280, 0)
 repeat_times = 4
 
-[node name="Background" type="Sprite2D" parent="FutureParallax/Layer2"]
+[node name="Background" type="Sprite2D" parent="FutureParallax/ColorRect/Layer2"]
+scale = Vector2(2.22222, 2.22222)
 texture = ExtResource("16_iun5e")
 centered = false
 
-[node name="Layer1" type="Parallax2D" parent="FutureParallax"]
+[node name="Layer1" type="Parallax2D" parent="FutureParallax/ColorRect"]
 z_index = 4
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
@@ -611,7 +629,8 @@ scroll_scale = Vector2(0.425, 1)
 repeat_size = Vector2(1280, 0)
 repeat_times = 4
 
-[node name="Background" type="Sprite2D" parent="FutureParallax/Layer1"]
+[node name="Background" type="Sprite2D" parent="FutureParallax/ColorRect/Layer1"]
+scale = Vector2(2.23958, 2.22222)
 texture = ExtResource("17_bnsky")
 centered = false
 

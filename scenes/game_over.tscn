@@ -15,6 +15,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.054902, 0, 0.239216, 1)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="background"]
 texture_filter = 1
@@ -30,6 +32,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.286275)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="restart" type="Button" parent="."]
 modulate = Color(1, 1, 1, 0.576471)
@@ -40,12 +44,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_0te5w")
 theme_override_font_sizes/font_size = 75
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="."]
-offset_left = 34.0
-offset_top = 311.0
-offset_right = 1282.0
-offset_bottom = 407.0
+anchors_preset = -1
+anchor_top = 0.4375
+anchor_right = 1.0
+anchor_bottom = 0.5625
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 10
@@ -53,12 +61,15 @@ theme_override_constants/shadow_offset_y = 10
 theme_override_fonts/font = ExtResource("3_0te5w")
 theme_override_font_sizes/font_size = 70
 text = "c l i c k  t o  p l a y  a g a i n"
+metadata/_edit_use_anchors_ = true
 
 [node name="story" type="Label" parent="."]
-offset_left = 68.0
-offset_top = 635.0
-offset_right = 258.0
-offset_bottom = 699.0
+anchors_preset = -1
+anchor_left = 0.053125
+anchor_top = 0.881944
+anchor_right = 0.201562
+anchor_bottom = 0.970833
+grow_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 10
@@ -66,6 +77,8 @@ theme_override_constants/shadow_offset_y = 10
 theme_override_fonts/font = ExtResource("3_0te5w")
 theme_override_font_sizes/font_size = 50
 text = "story"
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="Button" type="Button" parent="story"]
 modulate = Color(1, 1, 1, 0)
@@ -75,12 +88,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="endInstructions" type="Label" parent="."]
-offset_left = 851.0
-offset_top = 630.0
-offset_right = 1246.0
-offset_bottom = 694.0
+anchors_preset = -1
+anchor_left = 0.664844
+anchor_top = 0.875
+anchor_right = 0.973437
+anchor_bottom = 0.963889
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 10
@@ -88,6 +103,8 @@ theme_override_constants/shadow_offset_y = 10
 theme_override_fonts/font = ExtResource("3_0te5w")
 theme_override_font_sizes/font_size = 50
 text = "instructions"
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="Button" type="Button" parent="endInstructions"]
 modulate = Color(1, 1, 1, 0)
@@ -97,6 +114,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="Instructions" parent="." instance=ExtResource("7_5j21h")]
 visible = false

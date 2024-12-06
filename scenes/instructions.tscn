@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://g665dcekf2ol"]
 
 [ext_resource type="Script" path="res://scripts/instructions.gd" id="1_l08bq"]
-[ext_resource type="Texture2D" uid="uid://b7i7r42qim0q8" path="res://assets/textures/ui/Instruction Cover Page.png" id="3_se4ow"]
+[ext_resource type="Texture2D" uid="uid://bklakb7t8qvf6" path="res://assets/textures/ui/Instructions Background.png" id="2_78p4e"]
 [ext_resource type="Texture2D" uid="uid://b77wherpkl7px" path="res://assets/textures/ui/exit_page.png" id="5_gxt6x"]
 [ext_resource type="SpriteFrames" uid="uid://cbuwm6nxgehj0" path="res://assets/animations/player_movement.tres" id="5_r4lma"]
 [ext_resource type="Texture2D" uid="uid://c6e7fu4e45qri" path="res://assets/textures/ui/exit_page_hover.png" id="6_ptmy3"]
@@ -11,13 +11,8 @@ script = ExtResource("1_l08bq")
 metadata/_edit_vertical_guides_ = [-125.0]
 
 [node name="Background" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
 offset_right = 1280.0
 offset_bottom = 720.0
-grow_horizontal = 2
-grow_vertical = 2
 color = Color(0, 0, 0, 0.0941176)
 
 [node name="Instruction" type="TextureRect" parent="Background"]
@@ -27,14 +22,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_se4ow")
+texture = ExtResource("2_78p4e")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Jump" type="AnimatedSprite2D" parent="Background/Instruction"]
 texture_filter = 1
 texture_repeat = 2
-position = Vector2(645, 280)
+position = Vector2(625, 280)
 scale = Vector2(4.40589, 3.97515)
 sprite_frames = ExtResource("5_r4lma")
 animation = &"playerJump"
@@ -42,7 +37,7 @@ frame_progress = 0.234692
 
 [node name="Run" type="AnimatedSprite2D" parent="Background/Instruction"]
 texture_filter = 1
-position = Vector2(443, 280)
+position = Vector2(427, 280)
 scale = Vector2(4.19239, 4.18709)
 sprite_frames = ExtResource("5_r4lma")
 animation = &"playerRun"
@@ -50,7 +45,7 @@ frame_progress = 0.1892
 
 [node name="Teleport" type="AnimatedSprite2D" parent="Background/Instruction"]
 texture_filter = 1
-position = Vector2(860, 280)
+position = Vector2(843, 281)
 scale = Vector2(4.19239, 4.18709)
 sprite_frames = ExtResource("5_r4lma")
 animation = &"playerTeleport"
@@ -58,14 +53,15 @@ frame_progress = 0.104478
 
 [node name="Exit" type="TextureButton" parent="Background/Instruction"]
 layout_mode = 0
-offset_left = 280.0
-offset_top = 64.0
-offset_right = 336.0
-offset_bottom = 117.0
+anchor_left = 0.21875
+anchor_top = 0.0888889
+anchor_right = 0.2625
+anchor_bottom = 0.1625
 texture_normal = ExtResource("5_gxt6x")
 texture_pressed = ExtResource("5_gxt6x")
 texture_hover = ExtResource("6_ptmy3")
 ignore_texture_size = true
 stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Background/Instruction/Exit" to="." method="_on_texture_button_pressed"]

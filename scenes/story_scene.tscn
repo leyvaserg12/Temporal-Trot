@@ -107,10 +107,15 @@ texture = ExtResource("2_7sr0y")
 expand_mode = 3
 
 [node name="label" type="Label" parent="scenes"]
-offset_left = 1041.0
-offset_top = 642.0
-offset_right = 1258.0
-offset_bottom = 700.0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -217.0
+offset_top = -58.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 3
@@ -118,6 +123,7 @@ theme_override_constants/shadow_offset_y = 5
 theme_override_fonts/font = ExtResource("3_kqyav")
 theme_override_font_sizes/font_size = 45
 text = "space >"
+metadata/_edit_lock_ = true
 
 [node name="Transition" type="AnimationPlayer" parent="."]
 libraries = {
